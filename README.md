@@ -46,21 +46,13 @@ This project is a full-stack application organized in a **monorepo structure**. 
    ```bash
    chmod +x mvnw
    ```
-3. Build the backend: 
+3. Build the backend (see [Windows Alternative Commands](#windows-alternative-commands-backend-setup)): 
    ```bash
    ./mvnw package -DskipTests=true
-   ```
-   or on Windows
-   ```bash
-   mvnw.cmd package -DskipTests=true
    ```
 4. Run locally with a connected RDS instance:  
    ```bash
    ./mvnw spring-boot:run
-   ```
-   or on Windows
-   ```bash
-   mvnw.cmd spring-boot:run
    ```
 5. Update `application.properties` or `application.yml` with RDS connection details:
    ```properties
@@ -70,6 +62,27 @@ This project is a full-stack application organized in a **monorepo structure**. 
    spring.jpa.hibernate.ddl-auto=update
    ```
 
+---
+
+### Windows Alternative Commands (Backend Setup)
+
+If you are on Windows, use these commands instead of the Linux/Mac commands:
+
+1. Navigate to the `backend` folder:  
+   ```powershell
+   cd backend
+   ```
+
+2. **Skip `chmod +x`** (not required on Windows).
+
+3. Build the backend:  
+   ```powershell
+   mvnw.cmd package -DskipTests=true
+   ```
+
+4. Run locally with a connected RDS instance:  
+   ```powershell
+   mvnw.cmd spring-boot:run
 ---
 
 ## 4. Setting up RDS on AWS
@@ -167,6 +180,39 @@ jobs:
 
 ---
 
+## CloudFront Setup for Backend (Elastic Beanstalk)
+
+Because the backend Elastic Beanstalk environment uses HTTP by default, browsers block requests from the frontend (Amplify on HTTPS) due to mixed-content restrictions. To solve this, we configured **Amazon CloudFront** as an HTTPS reverse proxy in front of Elastic Beanstalk.
+
+### Steps
+
+1. **Create a CloudFront Distribution**
+   - Go to **AWS Console → CloudFront → Create Distribution**.
+   - **Origin domain**: Select your Elastic Beanstalk endpoint (e.g., `your-backend-env.elasticbeanstalk.com`).
+   - Set **Origin Protocol Policy** = `HTTP Only`.
+   - Set **Viewer Protocol Policy** = `Redirect HTTP to HTTPS`.
+
+2. **Alternate Domain (optional)**  
+   - If using a custom domain, add it under "Alternate Domain Names (CNAMEs)" and configure DNS.
+
+3. **Default Cache Behavior**  
+   - Allowed HTTP Methods: `GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE`.
+   - Disable caching for API paths.
+
+4. **SSL/TLS**  
+   - Choose an AWS-managed SSL certificate.
+
+5. **Deploy**  
+   - Save and deploy the distribution. You will get a CloudFront URL like:  
+     `https://<your-distribution>.cloudfront.net`
+
+6. **Update Frontend API URL**  
+   - Change `NEXT_PUBLIC_API_URL` in the frontend `.env` to use the CloudFront URL.
+
+7. **CORS**  
+   - Ensure the backend CORS configuration allows both the Amplify and CloudFront domains.
+---
+
 ## 6. Setting up Frontend on Amplify
 
 ### Step 1: Connect GitHub Repo
@@ -195,10 +241,40 @@ jobs:
 2. **Frontend ↔ Backend**: Amplify app uses the Elastic Beanstalk API endpoint (e.g., `https://<cloudfront>/api`).  
 3. **Authentication**: API secured with CORS, only frontend Amplify domain allowed.  
 
+---
+
+### CORS Configuration Clarification
+
+To secure API calls, the backend enforces **CORS** so that only requests from trusted domains are allowed. This is controlled by the `ALLOWED_ORIGIN` environment variable.
+
+Example in `application.properties` or configuration class:
+
+```properties
+ALLOWED_ORIGIN=https://your-frontend.amplifyapp.com
+```
+
+Spring Boot CORS filter sample:
+
+```java
+@Bean
+public WebMvcConfigurer corsConfigurer() {
+    return new WebMvcConfigurer() {
+        @Override
+        public void addCorsMappings(CorsRegistry registry) {
+            registry.addMapping("/**")
+                    .allowedOrigins(System.getenv("ALLOWED_ORIGIN"))
+                    .allowedMethods("*");
+        }
+    };
+}
+```
+
 ### Code Push Process
 1. Developer commits code and pushes to the respective `staging-*` branch.  
 2. GitHub Actions (backend) or Amplify CI/CD (frontend) builds and deploys automatically.  
 3. On success, updated environment is live.  
+
+
 
 ---
 
@@ -316,8 +392,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8080
 When deployed on Amplify, `NEXT_PUBLIC_API_URL` should point to the backend's **public URL (Elastic Beanstalk or CloudFront)**:  
 
 ```bash
-NEXT_PUBLIC_API_URL=https://your-backend-env.elasticbeanstalk.com
+NEXT_PUBLIC_API_URL=https://<your-cloudfront-distribution>.cloudfront.net
 ```
 
 > **Note:** The `NEXT_PUBLIC_` prefix is required in Next.js/React so that variables are exposed to the browser.
-
