@@ -1,0 +1,142 @@
+[
+  {
+    "title": "John Wick",
+    "releaseYear": 2014,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/john_wick.jpg",
+    "description": "An ex-hitman comes out of retirement to track down the gangsters that killed his dog."
+  },
+  {
+    "title": "Mad Max: Fury Road",
+    "releaseYear": 2015,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/mad_max.jpg",
+    "description": "In a post-apocalyptic wasteland, Max helps a rebellious woman and a group of female prisoners."
+  },
+  {
+    "title": "Mission: Impossible \u2013 Fallout",
+    "releaseYear": 2018,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/mi_fallout.jpg",
+    "description": "Ethan Hunt and his team must stop a global catastrophe while being pursued by assassins."
+  },
+  {
+    "title": "Extraction",
+    "releaseYear": 2020,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/extraction.jpg",
+    "description": "A black-market mercenary's mission to rescue a kidnapped boy goes awry in Bangladesh."
+  },
+  {
+    "title": "Nobody",
+    "releaseYear": 2021,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/nobody.jpg",
+    "description": "An underestimated dad reveals his dark past after burglars target his home."
+  },
+  {
+    "title": "Top Gun: Maverick",
+    "releaseYear": 2022,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/top_gun_maverick.jpg",
+    "description": "After 30 years, Maverick returns to train a new generation of elite pilots."
+  },
+  {
+    "title": "The Equalizer 2",
+    "releaseYear": 2018,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/equalizer2.jpg",
+    "description": "Robert McCall seeks justice for the exploited and oppressed."
+  },
+  {
+    "title": "Tenet",
+    "releaseYear": 2020,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/tenet.jpg",
+    "description": "A secret agent manipulates time to prevent World War III."
+  },
+  {
+    "title": "No Time to Die",
+    "releaseYear": 2021,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/no_time_to_die.jpg",
+    "description": "James Bond comes out of retirement to confront a new villain armed with dangerous technology."
+  },
+  {
+    "title": "The Batman",
+    "releaseYear": 2022,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/the_batman.jpg",
+    "description": "Batman uncovers corruption in Gotham linked to his own family."
+  },
+  {
+    "title": "John Wick Reloaded 1",
+    "releaseYear": 2025,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/john_wick.jpg",
+    "description": "An ex-hitman comes out of retirement to track down the gangsters that killed his dog."
+  },
+  {
+    "title": "Mad Max: Fury Road Reloaded 2",
+    "releaseYear": 2024,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/mad_max.jpg",
+    "description": "In a post-apocalyptic wasteland, Max helps a rebellious woman and a group of female prisoners."
+  },
+  {
+    "title": "Mission: Impossible \u2013 Fallout Reloaded 3",
+    "releaseYear": 2023,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/mi_fallout.jpg",
+    "description": "Ethan Hunt and his team must stop a global catastrophe while being pursued by assassins."
+  },
+  {
+    "title": "Extraction Reloaded 4",
+    "releaseYear": 2022,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/extraction.jpg",
+    "description": "A black-market mercenary's mission to rescue a kidnapped boy goes awry in Bangladesh."
+  },
+  {
+    "title": "Nobody Reloaded 5",
+    "releaseYear": 2021,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/nobody.jpg",
+    "description": "An underestimated dad reveals his dark past after burglars target his home."
+  },
+  {
+    "title": "Top Gun: Maverick Reloaded 6",
+    "releaseYear": 2025,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/top_gun_maverick.jpg",
+    "description": "After 30 years, Maverick returns to train a new generation of elite pilots."
+  },
+  {
+    "title": "The Equalizer 2 Reloaded 7",
+    "releaseYear": 2024,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/equalizer2.jpg",
+    "description": "Robert McCall seeks justice for the exploited and oppressed."
+  },
+  {
+    "title": "Tenet Reloaded 8",
+    "releaseYear": 2023,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/tenet.jpg",
+    "description": "A secret agent manipulates time to prevent World War III."
+  },
+  {
+    "title": "No Time to Die Reloaded 9",
+    "releaseYear": 2022,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/no_time_to_die.jpg",
+    "description": "James Bond comes out of retirement to confront a new villain armed with dangerous technology."
+  },
+  {
+    "title": "The Batman Reloaded 10",
+    "releaseYear": 2021,
+    "genre": "Action",
+    "posterUrl": "https://example.com/posters/the_batman.jpg",
+    "description": "Batman uncovers corruption in Gotham linked to his own family."
+  }
+]

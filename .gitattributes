@@ -1,0 +1,20 @@
+# Line endings
+* text=auto
+
+# Java and YML files
+*.java text diff=java
+*.yml text
+*.yaml text
+
+# JS/TS
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+
+# Configs and docs
+*.json text
+*.md text
+*.html text
+*.css text
+*.scss text
