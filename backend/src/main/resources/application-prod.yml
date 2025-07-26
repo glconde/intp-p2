@@ -3,18 +3,21 @@ spring:
     url: jdbc:mysql://${DB_URL}:${DB_PORT}/${DB_MOVIETABLE}?useSSL=false&serverTimezone=UTC
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
-	hikari:
-	  connection-timeout: 30000 # 30s timeout
+    hikari:
+      connection-timeout: 30000 # 30s timeout
   jpa:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.MySQLDialect
-    show-sql: false 
+    show-sql: false
   main:
-	allow-bean-definition-overriding: true
-	
+    allow-bean-definition-overriding: true
+
 # Disable open-in-view warning
-spring.jpa.open-in-view: false
+spring:
+  jpa:
+    open-in-view: false
 
 server:
   port: 8080
+
