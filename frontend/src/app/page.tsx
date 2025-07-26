@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Movie = {
   id: number;
@@ -26,14 +27,18 @@ export default function HomePage() {
         }
         const data = await res.json();
         setMovies(data);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Failed to fetch movies:", err);
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
       }
     };
 
     fetchMovies();
-  }, []);
+  }, [apiURL]); // are you happy now eslint??
 
   console.log("Movies:", movies);
 
@@ -52,10 +57,11 @@ export default function HomePage() {
               width: "250px",
             }}
           >
-            <img
+            <Image
               src={movie.posterUrl}
               alt={movie.title}
-              style={{ width: "100%" }}
+              width={250}
+              style={{ objectFit: "cover" }}
             />
             <h2>{movie.title}</h2>
             <p>
