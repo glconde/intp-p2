@@ -20,6 +20,7 @@ jobs:
           distribution: 'temurin'
     # build on maven 
       - name: Build Spring Boot Jar
+        working-directory: ./backend
         run: ./mvnw package -DskipTests=true
     # deploy to eb
       - name: Deploy to Elastic Beanstalk
@@ -31,4 +32,4 @@ jobs:
           environment_name: ${{ secrets.EB_ENV_NAME }}
           region: ${{ secrets.AWS_REGION }}
           version_label: ${{ github.sha }}
-          deployment_package: target/*.jar
+          deployment_package: backend/target/*.jar
