@@ -15,6 +15,17 @@ This project is a full-stack application organized in a **monorepo structure**. 
 - **Infrastructure**: AWS Amplify, AWS Elastic Beanstalk, AWS RDS, VPC, Security Groups  
 - **CI/CD**: GitHub Actions (staging branches `staging-frontend` and `staging-backend`)  
 
+
+## Architecture Diagram
+
+![Architecture Diagram](/docs/arch.png)
+
+*The diagram shows:*
+- **Amplify (Frontend)** → communicates over **HTTPS**  
+- **CloudFront** → terminates HTTPS and forwards requests to Elastic Beanstalk over **HTTP**  
+- **Elastic Beanstalk (Spring Boot API)** → handles backend logic and connects to **RDS**  
+- **RDS (MySQL)** → backend data layer, typically accessed via **JDBC (SSL optional)**  
+
 ---
 
 ## 2. Frontend Setup
