@@ -1,20 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-
-type Movie = {
-  id: number;
-  title: string;
-  releaseYear: number;
-  genre: string;
-  posterUrl: string;
-  description: string;
-};
+import sampleMovies from '@/app/sample-action-movies.json';
+import Movie from "@/components/Movie";
+import SectionTitle from "@/components/SectionTitle";
 
 export default function HomePage() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState([]);
   const [error, setError] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>("");
 
   const apiURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
@@ -28,7 +22,7 @@ export default function HomePage() {
         const data = await res.json();
         setMovies(data);
       } catch (err: unknown) {
-        console.error("Failed to fetch movies:", err);
+        //setMessage("Failed to fetch movies:"+ err);
         if (err instanceof Error) {
           setError(err.message);
         } else {
@@ -43,34 +37,16 @@ export default function HomePage() {
   console.log("Movies:", movies);
 
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Action Movies</h1>
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
-      {!error && movies.length === 0 && <p>Loading...</p>}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-        {movies.map((movie) => (
-          <div
-            key={movie.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "1rem",
-              width: "250px",
-            }}
-          >
-            <Image
-              src={movie.posterUrl}
-              alt={movie.title}
-              width={250}
-              style={{ objectFit: "cover" }}
-            />
-            <h2>{movie.title}</h2>
-            <p>
-              <strong>{movie.releaseYear}</strong> • {movie.genre}
-            </p>
-            <p>{movie.description}</p>
-          </div>
+    <main className="page">
+      <SectionTitle title="Action Movies"/>
+      {error && <div className="message" style={{ color: "red" }}>Error: {error}</div>}
+      {!error && movies.length === 0 && <div className="message">Loading Movies...</div>}
+      <section className="movies-wrapper">
+        
+        {sampleMovies.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
         ))}
-      </div>
+      </section>
     </main>
   );
 }
