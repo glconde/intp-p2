@@ -70,6 +70,60 @@ header{
   font-weight: 600;
 }
 
+.menu-links{
+  display:flex;
+  gap:10px;
+}
+
+a:link, a:active, a:visited{
+  color:#999999;
+  text-decoration: none;
+}
+
+a:hover{
+  color:#ffffff;
+}
+
+.login-wrapper{
+  height:50vw;
+  display:flex;
+  flex-flow:column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-wrapper button{
+  
+  
+  
+ 
+}
+
+button{
+  font-family:var(--font);
+  font-size:var(--normal);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+  border:solid 1px #252525;
+  background-color:#202020;
+  color:#ffffff;
+  border-radius:8px;
+  padding-inline:30px;
+  padding-block:10px;
+  cursor:pointer;
+}
+
+button:hover{
+  background-color: #303030;
+}
+
+button img{
+  width:20px;
+  height:20px;
+}
+
 
 .search{
   background-color: #303030;
@@ -104,9 +158,10 @@ header{
   padding-block:20px;
   display:flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap:15px;
   z-index:5;
+
   line-height: var(--medium);
 }
 
@@ -186,6 +241,7 @@ header{
   border-radius: 50px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  padding:5px;
 }
 
 .details-button:hover{
@@ -195,17 +251,53 @@ header{
 
 .modal{
   position:fixed;
-  top:0px;
-  bottom:50px;
+  top:50px;
+  bottom:0px;
   left:50px;
   right:50px;
-  background-color:rgba(0,0,0,0.6);
-  backdrop-filter: blur(20px);
+ 
   padding:50px;
   border-radius: 20px;
   box-shadow: 2px 2px 20px 0px #000000;
   z-index:20;
   border:solid #151515 1px;
+}
+
+.modal-background{
+  position:absolute;
+  height:100%;
+  width:100%;
+  object-fit: cover;
+  border-radius:20px;
+}
+
+.modal-content{
+   position:absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  padding:50px;
+ background-color:rgba(0,0,0,0.6);
+  backdrop-filter: blur(60px);
+  z-index:1;
+  border-radius: 20px 20px 0px 0px;
+  text-align: center;
+  overflow: auto;
+}
+
+.modal-header{
+  display:flex;
+  justify-content: flex-end;
+}
+
+.modal-inline-img{
+  max-width:400px;
+  margin:auto;
+  position:relative;
+  aspect-ratio: 2/3;
+  border-radius: 10px;
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.4);
 }
 
 .modal-title{
@@ -318,6 +410,7 @@ form button{
   color:#ffffff;
   transition:all 0.2s ease-in-out;
   opacity:0.6;
+  padding:5
 }
 
 .table-buttons button:hover{

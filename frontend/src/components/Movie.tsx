@@ -56,9 +56,22 @@ export const Movie = ({movie}:IMovieProps) => {
 export const Modal = ({data, openModal, modal}:IModal) => {
     return(
         <div className="modal">
-            <div><CircleX onClick={()=>openModal(!modal)} size={30}/></div>
+          <picture><img className="modal-background" className="movie-img"
+              src={data.posterUrl}
+              alt={data.title}
+            /></picture>
+            <div className="modal-content">
+            <div className="modal-header"><CircleX onClick={()=>openModal(!modal)} size={30}/></div>
+            <div>
             <div className="modal-title">{data.title}</div>
             <p>{data.description}</p>
+            <picture><img className="modal-inline-img"
+              src={data.posterUrl}
+              alt={data.title}
+            /></picture>
+            <p>{data.releaseYear} • {data.genre}</p>
+            </div>
+            </div>
         </div>
     )
 }

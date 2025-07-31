@@ -6,13 +6,16 @@ import { apiURL } from '@/services/services'
 import { IMovie } from '@/services/types'
 import AddMovieForm from '@/components/AddMovieForm'
 import FormModal from '@/components/FormModal'
+import { useAuth } from '@/services/AuthContext'
 const Page = () => {
     const [movies, setMovies] = useState<IMovie[]>([])
     const [isVisible, setVisible] = useState(false)
     const [form, setForm] = useState<boolean>(false)
     const [id, setId] = useState<unknown>(null)
-
+    const { user } = useAuth()
+    const router = useRouter()
     useEffect(()=>{
+        if(!user){router.replace('/');}
         getMovies();
     },[])
 
