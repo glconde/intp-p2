@@ -9,6 +9,7 @@
   --normal:1rem;
   --medium:1.4rem;
   --large:1.8rem;
+  --elarge:2.5rem;
 
 }
 
@@ -99,7 +100,7 @@ header{
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   position:sticky;
-  top:50px;
+  top:60px;
   padding-block:20px;
   display:flex;
   align-items: center;
@@ -145,6 +146,13 @@ header{
   margin-bottom: 10px;
 }
 
+.movie-img{
+  object-fit: cover;
+  aspect-ratio: 2/3;
+  width:100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
 .movie-content{
   padding-inline:20px;
 }
@@ -156,6 +164,236 @@ header{
 
 .movie-description{
   color:#999999;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits text to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-year{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details-button{
+  display:flex;
+  align-items: center;
+  background-color: transparent;
+  color:#ffffff;
+  border:solid #202020 2px;
+  border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.details-button:hover{
+  border:solid #fff 2px;
+  transform: scale(1.1);
+}
+
+.modal{
+  position:fixed;
+  top:0px;
+  bottom:50px;
+  left:50px;
+  right:50px;
+  background-color:rgba(0,0,0,0.6);
+  backdrop-filter: blur(20px);
+  padding:50px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 0px #000000;
+  z-index:20;
+  border:solid #151515 1px;
+}
+
+.modal-title{
+  font-size:var(--elarge);
+  font-weight: 700;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.form-modal{
+  position:fixed;
+  top:0px;
+  max-width:800px;
+  left:0px;
+  right:0px;
+  margin:auto;
+  bottom:0px;
+  overflow: auto;
+  background-color: rgba(10,10,10,0.6);
+  backdrop-filter: blur(20px);
+  z-index:10;
+}
+
+.form-modal-header{
+  position:sticky;
+  top:0px;
+  background-color: #101010;
+  padding:10px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form{
+  max-width:600px;
+  margin:auto;
+  display:grid;
+  gap:20px;
+}
+
+.form-section{
+  display:grid;
+}
+
+form input, form select{
+  height:40px;
+  border-radius: 5px;
+  border:none;
+  padding-inline:10px;
+  font-family:var(--font);
+  font-size:var(--normal);
+}
+
+form textarea{
+  height:40px;
+  border-radius: 5px;
+  border:none;
+  padding-inline:10px;
+  font-family:var(--font);
+  font-size:var(--normal);
+  resize: none;
+  height:120px;
+  padding-top:10px;
+}
+
+form button{
+
+}
+
+.dashboard-section{
+  display:flex;
+  gap:20px;
+  padding:20px;
+  max-width: 800px;
+  margin:auto;
+}
+
+.dashboard-section2{
+  padding:20px;
+  max-width: 800px;
+  margin:auto;
+}
+
+.dashboard-link{
+  background-color:#202020;
+  border-radius: 10px;
+  padding:20px;
+  cursor:pointer;
+  transition:all 0.2s ease-in-out;
+}
+
+.dashboard-link:hover{
+  transform:scale(1.1);
+}
+
+.table-buttons{
+  display:flex;
+  position:relative;
+  justify-content: flex-end;
+  gap:5px;
+
+}
+
+.table-buttons button{
+  background-color: transparent;
+  border:none;
+  cursor:pointer;
+  color:#ffffff;
+  transition:all 0.2s ease-in-out;
+  opacity:0.6;
+}
+
+.table-buttons button:hover{
+  opacity:1.0;
+  transform:scale(1.1);
+}
+
+table{
+  border-collapse: collapse;
+  width:100%;
+}
+td{
+  padding:10px;
+}
+
+thead td{
+  font-weight: 700;
+
+}
+
+thead{
+  position:sticky;
+  top:70px;
+  background-color:#000000;
+  z-index:3;
+}
+
+tr{
+  border-bottom: solid 1px #202020;
+}
+
+thead tr:nth-child(1){
+  border-bottom: solid 1px #ffffff;
+}
+
+.toggle-div{
+  padding:10px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom:solid 1px #202020;
+  cursor:pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-div:hover{
+  opacity:0.8;
+}
+
+.loader-wrapper{
+  display:grid;
+  gap:10px;
+  padding:50px;
+}
+
+
+.loader-label{
+  height:15px;
+  background-color: #202020;
+  border-radius: 5px;
+  width:30%
+}
+
+.loader{
+  height:40px;
+  background-color: #202020;
+  border-radius: 5px;
+}
+
+footer{
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  color:#808080;
+  padding:20px;
+  gap:20px;
 }
 
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Clapperboard } from "lucide-react"
 import MenuSearch from "./MenuSearch";
 const Menu = () => {
@@ -8,7 +9,9 @@ const Menu = () => {
                 MovieBank
             </div>
             <MenuSearch />
-            <div className="menu-links"></div>
+            <div className="menu-links">
+                <Link href="/dashboard">Dashboard</Link>
+            </div>
         </nav>
     )
 }

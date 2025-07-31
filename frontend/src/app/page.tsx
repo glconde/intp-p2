@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import sampleMovies from '@/app/sample-action-movies.json';
-import Movie from "@/components/Movie";
+import { Movie, Modal} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
 
 export default function HomePage() {
@@ -43,7 +43,7 @@ export default function HomePage() {
       {!error && movies.length === 0 && <div className="message">Loading Movies...</div>}
       <section className="movies-wrapper">
         
-        {sampleMovies.map((movie,i) => (
+        {movies.map((movie,i) => (
           <Movie key={i} movie={movie}/>
         ))}
       </section>

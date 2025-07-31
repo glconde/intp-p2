@@ -2,7 +2,7 @@
 
 const MenuSearch = () => {
 
-    const handleSearch = (e:unknown) => {
+    const handleSearch = () => {
 
     }
 
