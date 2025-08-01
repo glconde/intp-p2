@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import sampleMovies from '@/app/sample-action-movies.json';
 import { Movie, Modal} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
-import { allMovies } from "@/services/services";
+import { allMovies, fader } from "@/services/services";
+import { IMovie } from "@/services/types";
 
 export default function HomePage() {
   const [movies, setMovies] = useState<[]>([]);
@@ -13,22 +14,31 @@ export default function HomePage() {
 
   
   useEffect(() => {
+    
     allMovies.then((m) => setMovies(m))
+    scroller(); 
   },[]);
 
-  const romance = movies && movies.filter((item) => item.genre.toLowerCase().includes('romance'))
+  const scroller = () => {
+    setTimeout(()=>fader(),2000)
+    window.addEventListener("scroll",()=>{
+      fader()
+    })
+  }
 
-  const action = movies && movies.filter((item) => item.genre.toLowerCase().includes('action'))
+  const romance = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('romance'))
 
-  const drama = movies && movies.filter((item) => item.genre.toLowerCase().includes('drama'))
+  const action = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('action'))
 
-  const comedy = movies && movies.filter((item) => item.genre.toLowerCase().includes('comedy'))
+  const drama = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('drama'))
 
-  const thriller = movies && movies.filter((item) => item.genre.toLowerCase().includes('thriller'))
+  const comedy = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('comedy'))
 
-  const oldmovies = movies && movies.filter((item) => item.releaseYear < 1990)
+  const thriller = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('thriller'))
 
-  const latest = movies && movies.filter((item) => item.releaseYear === 2025)
+  const oldmovies = movies && movies.filter((item:IMovie) => item.releaseYear < 1990)
+
+  const latest = movies && movies.filter((item:IMovie) => item.releaseYear === 2025)
 
   return (
     <main className="page">

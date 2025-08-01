@@ -1,7 +1,7 @@
 export const apiURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
 
 
-export const getMovies = async () => {
+const getMovies = async () => {
      try {
         const res = await fetch(`${apiURL}/api/movies`);
         if (!res.ok) {
@@ -18,6 +18,33 @@ export const getMovies = async () => {
           return [{error: "An unknown error occurred"}];
         }
       }
+}
+
+export const getMovieData = async (title:string) => {
+  try{
+    const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_MOVIE_API}&t=${title}`);
+    if(response.ok){
+      const data = await response.json();
+      console.log(data)
+      return data
+    }
+    
+  }catch(error){
+    return error
+  }
+}
+
+export const fader = () => {
+  const hidden = document.querySelectorAll(".movie-wrapper");
+  hidden.forEach((item)=>{
+    const pos = item.getBoundingClientRect()
+      if(pos.y < 900){
+        console.log('show')
+        item.classList.add('show');
+      }else{
+        item.classList.remove('show');
+      }
+  })
 }
 
 export const allMovies = getMovies()
