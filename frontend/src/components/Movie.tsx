@@ -53,18 +53,51 @@ export const Movie = ({movie}:IMovieProps) => {
     )
 }
 
+export const MovieSearch = ({movie}:IMovieProps) => {
+    const [modal, setModal] = useState<boolean>(false)
+
+    const handleDetails = () => {
+        setModal(!modal)
+    }
+
+    return(
+        <>
+        {modal && <Modal data={movie} openModal={setModal} modal={modal}/>}
+        <div
+            key={movie.id}
+            className="search-result" onClick={handleDetails}
+          >
+            
+            <div className="movie-poster-search">{movie.posterUrl ? <picture><img className="movie-img"
+              src={movie.posterUrl}
+              alt={movie.title}
+            /></picture> : <Popcorn size={60} color="#404040"/>}</div>
+            <div className="movie-content">
+            <div>{movie.title} </div>
+            <div className="movie-year">
+              <span>{movie.releaseYear} • {movie.genre}</span>
+              
+            </div>
+       <div className="movie-description">{movie.description}</div>
+            
+          </div>
+          </div>
+          </>
+    )
+}
+
 export const Modal = ({data, openModal, modal}:IModal) => {
     return(
         <div className="modal">
-          <picture><img className="modal-background" className="movie-img"
+          <picture><img className="modal-background"
               src={data.posterUrl}
               alt={data.title}
             /></picture>
             <div className="modal-content">
             <div className="modal-header"><CircleX onClick={()=>openModal(!modal)} size={30}/></div>
-            <div>
+            <div className="modal-content-section">
             <div className="modal-title">{data.title}</div>
-            <p>{data.description}</p>
+            <p className="modal-description">{data.description}</p>
             <picture><img className="modal-inline-img"
               src={data.posterUrl}
               alt={data.title}

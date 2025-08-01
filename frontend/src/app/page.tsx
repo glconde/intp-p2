@@ -4,46 +4,83 @@ import { useEffect, useState } from "react";
 import sampleMovies from '@/app/sample-action-movies.json';
 import { Movie, Modal} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
+import { getMovies } from "@/services/services";
 
 export default function HomePage() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState<string>("");
 
-  const apiURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
-
+  
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const res = await fetch(`${apiURL}/api/movies`);
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const data = await res.json();
-        setMovies(data);
-      } catch (err: unknown) {
-        //setMessage("Failed to fetch movies:"+ err);
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("An unknown error occurred");
-        }
-      }
-    };
+    getMovies().then((m) => setMovies(m))
+  }, []); // are you happy now eslint??
 
-    fetchMovies();
-  }, [apiURL]); // are you happy now eslint??
+  const romance = movies && movies.filter((item) => item.genre.toLowerCase().includes('romance'))
 
-  console.log("Movies:", movies);
+  const action = movies && movies.filter((item) => item.genre.toLowerCase().includes('action'))
+
+  const drama = movies && movies.filter((item) => item.genre.toLowerCase().includes('drama'))
+
+  const comedy = movies && movies.filter((item) => item.genre.toLowerCase().includes('comedy'))
+
+  const thriller = movies && movies.filter((item) => item.genre.toLowerCase().includes('thriller'))
+
+    const oldmovies = movies && movies.filter((item) => item.releaseYear < 1990)
+
+    const latest = movies && movies.filter((item) => item.releaseYear === 2025)
 
   return (
     <main className="page">
-      <SectionTitle title="Action Movies"/>
+      
       {error && <div className="message" style={{ color: "red" }}>Error: {error}</div>}
       {!error && movies.length === 0 && <div className="message">Loading Movies...</div>}
+
+      <SectionTitle title="The Latest"/>
       <section className="movies-wrapper">
-        
-        {movies.map((movie,i) => (
+        {latest && latest.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
+        ))}
+      </section>
+
+      <SectionTitle title="Action"/>
+      <section className="movies-wrapper">
+        {action && action.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
+        ))}
+      </section>
+
+      <SectionTitle title="Romance"/>
+      <section className="movies-wrapper">
+        {romance && romance.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
+        ))}
+      </section>
+
+      <SectionTitle title="Dramas"/>
+      <section className="movies-wrapper">
+        {drama && drama.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
+        ))}
+      </section>
+
+      <SectionTitle title="Comedies"/>
+      <section className="movies-wrapper">
+        {comedy && comedy.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
+        ))}
+      </section>
+
+      <SectionTitle title="Thrillers"/>
+      <section className="movies-wrapper">
+        {thriller && thriller.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
+        ))}
+      </section>
+
+      <SectionTitle title="Old Movies"/>
+      <section className="movies-wrapper">
+        {oldmovies && oldmovies.map((movie,i) => (
           <Movie key={i} movie={movie}/>
         ))}
       </section>

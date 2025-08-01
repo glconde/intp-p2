@@ -124,6 +124,34 @@ button img{
   height:20px;
 }
 
+.search-wrapper{
+  position:relative;
+  margin-left:10px;
+}
+
+.search-results{
+  position:absolute;
+  left:-140px;
+  right:0px;
+  top:110%;
+}
+
+.search-result{
+display:flex;
+align-items:flex-start;
+  background-color:#202020;
+  border-bottom: solid 1px #404040;
+  padding:10px;
+  cursor:pointer
+}
+
+.search-result:hover{
+  background-color: #252525;
+}
+
+.search-result:nth-last-child(1){
+  border:none;
+}
 
 .search{
   background-color: #303030;
@@ -155,13 +183,13 @@ button img{
   backdrop-filter: blur(20px);
   position:sticky;
   top:60px;
-  padding-block:20px;
+  padding-block:30px;
+  padding-inline:10px;
   display:flex;
-  align-items: center;
-  justify-content: center;
-  gap:15px;
-  z-index:5;
-
+  max-width:1000px;
+  margin:auto;
+  gap:10px;
+  z-index:4;
   line-height: var(--medium);
 }
 
@@ -201,6 +229,21 @@ button img{
   margin-bottom: 10px;
 }
 
+.movie-poster-search{
+  aspect-ratio: 2/3;
+  width:50px;
+  display:flex;
+  flex-flow:column nowrap;
+  align-items: center;
+  justify-content: center;
+  border-radius:5px;
+}
+
+.movie-poster-search .movie-img{
+  width:50px;
+  border-radius:5px 5px 5px 5px;
+}
+
 .movie-img{
   object-fit: cover;
   aspect-ratio: 2/3;
@@ -226,10 +269,20 @@ button img{
   text-overflow: ellipsis;
 }
 
+.search-result .movie-description{
+  font-size:var(--small);
+  font-weight:300;
+}
+
 .movie-year{
   display:flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.search-result .movie-year{
+  font-weight:300;
+  font-size:var(--small);
 }
 
 .details-button{
@@ -286,9 +339,19 @@ button img{
   overflow: auto;
 }
 
+.modal-content-section{
+  max-width:800px;
+  position:relative;
+  margin:auto;
+}
+
 .modal-header{
   display:flex;
   justify-content: flex-end;
+}
+
+.modal-header {
+  cursor:pointer;
 }
 
 .modal-inline-img{
@@ -297,7 +360,8 @@ button img{
   position:relative;
   aspect-ratio: 2/3;
   border-radius: 10px;
-  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.3);
+  border:solid 5px rgba(255,255,255,0.1)
 }
 
 .modal-title{
@@ -311,7 +375,7 @@ button img{
 
 .form-modal{
   position:fixed;
-  top:0px;
+  top:20px;
   max-width:800px;
   left:0px;
   right:0px;
@@ -321,6 +385,9 @@ button img{
   background-color: rgba(10,10,10,0.6);
   backdrop-filter: blur(20px);
   z-index:10;
+  box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.3);
+  border:solid 1px #303030;
+  border-radius:20px 20px 0px 0px;
 }
 
 .form-modal-header{

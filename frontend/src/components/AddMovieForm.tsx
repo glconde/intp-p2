@@ -16,7 +16,7 @@ const AddMovieForm = ({id, getMovies}:IMovieForm) => {
         if(id) getMovie();
     })
 
-    const addMovie = async (e:FormEvent<HTMLFormElement>) => {
+    const addMovie = async (e:unknown) => {
         setUpdate(true)
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
@@ -41,7 +41,9 @@ const AddMovieForm = ({id, getMovies}:IMovieForm) => {
             await response.json()
             setMessage(`Successfully updated`)
             setUpdate(false)
+            e.target.reset()
             getMovies();
+            setMessage('')
             }else{
                 setMessage('Error')
             }
@@ -67,28 +69,29 @@ if(id){
 }
     return(
         <>
-        {message}
+        
         <form onSubmit={addMovie}>
             <h2>{id ? 'Update' : "Add"} Movie</h2>
+            {message}
             <div className="form-section">
                 <label>Title</label>
-                <input type="text" name="title" defaultValue={movie && movie.title} placeholder="Enter movie title" required/>
+                <input type="text" name="title" defaultValue={movie && movie.title} minLength={3} placeholder="Enter movie title" required/>
             </div>
             <div className="form-section">
                 <label>Release Year</label>
-                <input type="number" name="releaseYear" placeholder="Enter year of release" defaultValue={movie && movie.releaseYear} required/>
+                <input type="number" name="releaseYear" min={1950} max={2030} placeholder="Enter year of release" defaultValue={movie && movie.releaseYear} required/>
             </div>
             <div className="form-section">
                 <label>Genre</label>
-                <input type="text" name="genre" placeholder="Enter genre of movie" defaultValue={movie && movie.genre} required/>
+                <input type="text" name="genre" placeholder="Enter genre of movie" minLength={4} defaultValue={movie && movie.genre} required/>
             </div>
             <div className="form-section">
                 <label>Poster URL</label>
-                <input type="text" placeholder="Poster link" name="posterUrl" defaultValue={movie && movie.posterUrl}/>
+                <input type="text" placeholder="Poster link" name="posterUrl" defaultValue={movie && movie.posterUrl} minLength={10} required/>
             </div>
             <div className="form-section">
                 <label>Description</label>
-                <textarea name="description" placeholder="Enter description for movie" defaultValue={movie && movie.description} required ></textarea>
+                <textarea name="description" placeholder="Enter description for movie" defaultValue={movie && movie.description} minLength={10} maxLength={300} required ></textarea>
             </div>
             <button type="submit">{id ? 'Update' : 'Add'} Movie {update && ' Updating...'}</button>
         </form>

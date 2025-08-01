@@ -24,8 +24,9 @@ const Menu = () => {
             <div className="menu-logo">
                 <Clapperboard size={20}/>
                 MovieBank
+                <MenuSearch />
             </div>
-            <MenuSearch />
+            
             <div className="menu-links">
                 <Link href="/">Home</Link>
                 {user && <><Link href="/dashboard">Dashboard</Link> <a onClick={handleLogout} href="#">Logout</a></>}
