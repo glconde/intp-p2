@@ -19,9 +19,9 @@ const getMovies = async () => {
       }
 }
 
-export const getMovieData = async (title:string) => {
+export const getMovieData = async (title:string, year:number) => {
   try{
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_MOVIE_API}&t=${title}`);
+    const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_MOVIE_API}&t=${title}&y=${year}`);
     if(response.ok){
       const data = await response.json();
       return data

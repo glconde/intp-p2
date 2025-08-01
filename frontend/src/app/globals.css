@@ -51,7 +51,8 @@ header{
    position: sticky;
   top:0px;
   z-index:5;
-  background-color: #000000;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(20px);
 }
 
 .menu-bar{
@@ -158,11 +159,11 @@ align-items:flex-start;
 }
 
 .search{
-  background-color: #303030;
-  border:none;
-  border-radius: 5px;
+  background-color: transparent;
+  border:solid 2px rgba(255,255,255,0.2);
+  border-radius: 8px;
   height:30px;
-  width:200px;
+  width:160px;
   padding-inline:10px;
   font-family: var(--font);
   color:#ffffff;
@@ -170,7 +171,7 @@ align-items:flex-start;
 }
 
 .search:focus{
-  outline: solid 4px rgba(255,255,255,0.4) ;
+  border:solid 2px yellow;
   outline-offset: 0px;
 }
 
@@ -182,9 +183,7 @@ align-items:flex-start;
   font-size:var(--medium);
   font-weight: 600;
   color:#ffffff;
-  background-color: rgba(0,0,0,0.6);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background-color: #000000;
   position:sticky;
   top:70px;
   padding-block:30px;
@@ -331,18 +330,18 @@ align-items:flex-start;
   bottom:0px;
   left:50px;
   right:50px;
- 
-  padding:50px;
   border-radius: 20px;
-  box-shadow: 2px 2px 20px 0px #000000;
+  box-shadow: 2px -2px 20px 0px rgba(0,0,0,0.3);
   z-index:20;
-  border:solid #151515 1px;
+  border:solid rgba(255,255,255,0.1) 3px;
 }
+
+
 
 .modal-background{
   position:absolute;
-  height:100%;
   width:100%;
+  height:100%;
   object-fit: cover;
   border-radius:20px;
 }
@@ -360,6 +359,21 @@ align-items:flex-start;
   border-radius: 20px 20px 0px 0px;
   text-align: center;
   overflow: auto;
+}
+
+.modal-content::-webkit-scrollbar{
+  width:5px;
+  height:5px;
+}
+
+.modal-content::-webkit-scrollbar-track{
+  background-color: transparent;
+  margin-top:20px;
+}
+
+.modal-content::-webkit-scrollbar-thumb{
+  background-color: rgba(255,255,255,0.2);
+  border-radius:10px;
 }
 
 .modal-content table{
@@ -385,6 +399,18 @@ align-items:flex-start;
   max-width:800px;
   position:relative;
   margin:auto;
+}
+
+.modal-content-section2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:20px;
+}
+
+.mcs{
+  padding:20px;
+  border:solid 2px rgba(255,255,255,0.1);
+  border-radius: 10px;
 }
 
 .modal-header{
@@ -414,16 +440,11 @@ align-items:flex-start;
 .rating{
   display:flex;
   align-items: center;
-  margin:auto;
-  max-width:400px;
   justify-content: space-between;
 }
 
 .rating div{
-  display:flex;
-  align-items: center;
-  gap:5px;
-  line-height:40px;
+  
 }
 
 .text-center{

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import sampleMovies from '@/app/sample-action-movies.json';
 import { Movie, Modal} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
 import { allMovies, fader } from "@/services/services";
@@ -11,9 +10,7 @@ import { PulseLoader } from "react-spinners";
 export default function HomePage() {
   const [movies, setMovies] = useState<[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [message, setMessage] = useState<string>("");
 
-  
   useEffect(() => {
     
     allMovies.then((m) => setMovies(m))

@@ -107,8 +107,8 @@ export const MovieSearch = ({movie}:IMovieProps) => {
 export const Modal = ({data, openModal, modal}:IModal) => {
   const [moviedata, setMoviedata] = useState<IMovieData | null>(null)
   useEffect(()=>{
-    getMovieData(data.title).then(d=>setMoviedata(d))
-  },[data.title])
+    getMovieData(data.title, data.releaseYear).then(d=>setMoviedata(d))
+  },[data.title, data.releaseYear])
     return(
         <div className="modal">
           <picture><img className="modal-background"
@@ -127,19 +127,25 @@ export const Modal = ({data, openModal, modal}:IModal) => {
             <p>{data.releaseYear} • {data.genre} • {moviedata && moviedata.Runtime}</p>
             { !moviedata ? <PropagateLoader color="yellow"/>: 
             <>
-            <h1><Star size={50}/></h1>
+            <div className="modal-content-section2">
+              <div className="mcs">
+            <h1><Star size={80} /></h1>
                 <div>{moviedata && !moviedata.Ratings ? <p>No ratings available</p> : moviedata && moviedata.Ratings.map((rating:IRating, i)=>{
-                  return <div className="rating"  key={i}><div><Star/>{rating.Source}</div> {rating.Value}</div>
+                  return <div className="rating"  key={i}><div>{rating.Source}</div> {rating.Value}</div>
                 })}
             </div>
-
-             <h1><Award size={50}/></h1>
+</div>
+<div className="mcs">
+             <h1><Award size={80}/></h1>
                 <div>{moviedata && !moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata && moviedata.Awards}</div></div>
                 }
             </div>
+            </div>
+            </div>
            
-            <h1 style={{marginTop:'40px'}}><Film size={50}/></h1>
+       
             {
+            
              <table><tbody>
                 <tr><td>Director</td><td>{moviedata && moviedata.Director}</td></tr>
                 <tr><td>Actors</td><td>{moviedata&& moviedata.Actors}</td></tr>
@@ -148,6 +154,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
                 <tr><td>Box Office</td><td>{moviedata&& moviedata.BoxOffice}</td></tr>
                 <tr><td>Plot</td><td>{moviedata&& moviedata.Plot}</td></tr>
                 </tbody></table>
+          
               }
               </>
 }
