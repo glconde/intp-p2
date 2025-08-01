@@ -21,7 +21,7 @@ interface IMovieData {
   BoxOffice:string;
   Plot:string;
   Awards:string;
-  Ratings?:[];
+  Ratings:[];
 }
 
 interface IRating {

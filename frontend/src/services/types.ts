@@ -7,3 +7,9 @@ export interface IMovie {
     posterUrl:string;
 
 }
+
+
+export interface IPageLink{
+    path:string;
+    title:string;
+}

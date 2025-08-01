@@ -8,7 +8,6 @@ const getMovies = async () => {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
-        //console.log('test')
         return data
       } catch (err: unknown) {
         //setMessage("Failed to fetch movies:"+ err);
@@ -25,7 +24,6 @@ export const getMovieData = async (title:string) => {
     const response = await fetch(`http://www.omdbapi.com/?apikey=${process.env.NEXT_PUBLIC_MOVIE_API}&t=${title}`);
     if(response.ok){
       const data = await response.json();
-      console.log(data)
       return data
     }
     

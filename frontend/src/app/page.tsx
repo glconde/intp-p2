@@ -20,24 +20,34 @@ export default function HomePage() {
   },[]);
 
   const scroller = () => {
-    setTimeout(()=>fader(),2000)
+    setTimeout(()=>fader(),1000)
     window.addEventListener("scroll",()=>{
       fader()
     })
   }
 
+  // Get Romance Movies
   const romance = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('romance'))
 
+  // Get Action Movies 
   const action = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('action'))
 
+  // Get Drama Movies
   const drama = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('drama'))
 
+  // Get Comedy Movies
   const comedy = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('comedy'))
 
+  // Get Thriller Movies
   const thriller = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('thriller'))
 
+  // Get Horror Movies
+  const horror = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('horror'))
+
+  // Get Old Movies
   const oldmovies = movies && movies.filter((item:IMovie) => item.releaseYear < 1990)
 
+  // Get Latest Movies
   const latest = movies && movies.filter((item:IMovie) => item.releaseYear === 2025)
 
   return (
@@ -91,6 +101,13 @@ export default function HomePage() {
       <SectionTitle title="Old Movies"/>
       <section className="movies-wrapper">
         {oldmovies && oldmovies.map((movie,i) => (
+          <Movie key={i} movie={movie}/>
+        ))}
+      </section>
+
+      <SectionTitle title="Horrors"/>
+      <section className="movies-wrapper">
+        {horror && horror.map((movie,i) => (
           <Movie key={i} movie={movie}/>
         ))}
       </section>
