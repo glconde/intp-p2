@@ -7,8 +7,10 @@ import { IMovie } from '@/services/types'
 import AddMovieForm from '@/components/AddMovieForm'
 import FormModal from '@/components/FormModal'
 import { useAuth } from '@/services/AuthContext'
+ import { allMovies } from '@/services/services'
 const Page = () => {
     const [movies, setMovies] = useState<IMovie[]>([])
+   
     const [isVisible, setVisible] = useState(false)
     const [form, setForm] = useState<boolean>(false)
     const [id, setId] = useState<unknown>(null)
@@ -16,19 +18,11 @@ const Page = () => {
     const router = useRouter()
     useEffect(()=>{
         if(!user){router.replace('/');}
-        getMovies();
+        getMovies()
     },[])
 
-    const getMovies = async () => {
-        try{
-        const response = await fetch(`${apiURL}/api/movies`);
-        if(response.ok){
-            const data = await response.json();
-            setMovies(data);
-        }
-        }catch(error){
-            alert('Error+'+error)
-        }
+    const getMovies = () => {
+        allMovies.then((m)=>setMovies(m));
     }
 
     const deleteMovie = async (id:number) => {

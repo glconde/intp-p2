@@ -45,7 +45,7 @@ export const Movie = ({movie}:IMovieProps) => {
             <div className="movie-year">
               <span>{movie.releaseYear} • {movie.genre}</span><button className="details-button" onClick={handleDetails}><Ellipsis/></button>
             </div>
-            <p className="movie-description">{movie.description}</p>
+            <div className="movie-description">{movie.description}</div>
             
           </div>
           </div>

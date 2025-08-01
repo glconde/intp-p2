@@ -8,6 +8,7 @@ export const getMovies = async () => {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         const data = await res.json();
+        //console.log('test')
         return data
       } catch (err: unknown) {
         //setMessage("Failed to fetch movies:"+ err);
@@ -18,3 +19,5 @@ export const getMovies = async () => {
         }
       }
 }
+
+export const allMovies = getMovies()

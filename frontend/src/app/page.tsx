@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import sampleMovies from '@/app/sample-action-movies.json';
 import { Movie, Modal} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
-import { getMovies } from "@/services/services";
+import { allMovies } from "@/services/services";
 
 export default function HomePage() {
   const [movies, setMovies] = useState<[]>([]);
@@ -13,8 +13,8 @@ export default function HomePage() {
 
   
   useEffect(() => {
-    getMovies().then((m) => setMovies(m))
-  }, []); // are you happy now eslint??
+    allMovies.then((m) => setMovies(m))
+  },[]);
 
   const romance = movies && movies.filter((item) => item.genre.toLowerCase().includes('romance'))
 
@@ -26,9 +26,9 @@ export default function HomePage() {
 
   const thriller = movies && movies.filter((item) => item.genre.toLowerCase().includes('thriller'))
 
-    const oldmovies = movies && movies.filter((item) => item.releaseYear < 1990)
+  const oldmovies = movies && movies.filter((item) => item.releaseYear < 1990)
 
-    const latest = movies && movies.filter((item) => item.releaseYear === 2025)
+  const latest = movies && movies.filter((item) => item.releaseYear === 2025)
 
   return (
     <main className="page">

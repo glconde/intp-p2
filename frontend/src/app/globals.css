@@ -253,6 +253,7 @@ align-items:flex-start;
 
 .movie-content{
   padding-inline:20px;
+  padding-bottom:10px;
 }
 
 .movie-title{

@@ -1,13 +1,13 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { getMovies } from '@/services/services'
+import { allMovies } from '@/services/services'
 import { IMovie } from '@/services/types'
 import { MovieSearch } from './Movie'
 const MenuSearch = () => {
     const [movies, setMovies] = useState<[]>([])
     const [searchresults, setSearchresults] = useState<[]>([])
     useEffect(()=>{
-        getMovies().then((m) => setMovies(m))
+        allMovies.then((m) => setMovies(m))
     })
     const handleSearch = (e) => {
         if(e.target.value.length >= 2 && e.target.value != ''){
