@@ -6,6 +6,7 @@ import { Movie, Modal} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
 import { allMovies, fader } from "@/services/services";
 import { IMovie } from "@/services/types";
+import { PulseLoader } from "react-spinners";
 
 export default function HomePage() {
   const [movies, setMovies] = useState<[]>([]);
@@ -54,7 +55,7 @@ export default function HomePage() {
     <main className="page">
       
       {error && <div className="message" style={{ color: "red" }}>Error: {error}</div>}
-      {!error && movies.length === 0 && <div className="message">Loading Movies...</div>}
+      {!error && movies.length === 0 && <div className="message"><PulseLoader color="yellow"/></div>}
 
       <SectionTitle title="The Latest"/>
       <section className="movies-wrapper">

@@ -1,5 +1,5 @@
 import { Popcorn, Ellipsis, CircleX, Star, Award, Film } from "lucide-react";
-import Image from "next/image";
+import { PropagateLoader } from "react-spinners";
 import { useState, useEffect } from "react";
 import { getMovieData } from "@/services/services";
 
@@ -125,6 +125,8 @@ export const Modal = ({data, openModal, modal}:IModal) => {
               alt={data.title}
             /></picture>
             <p>{data.releaseYear} • {data.genre} • {moviedata && moviedata.Runtime}</p>
+            { !moviedata ? <PropagateLoader color="yellow"/>: 
+            <>
             <h1><Star size={50}/></h1>
                 <div>{moviedata && !moviedata.Ratings ? <p>No ratings available</p> : moviedata && moviedata.Ratings.map((rating:IRating, i)=>{
                   return <div className="rating"  key={i}><div><Star/>{rating.Source}</div> {rating.Value}</div>
@@ -147,8 +149,8 @@ export const Modal = ({data, openModal, modal}:IModal) => {
                 <tr><td>Plot</td><td>{moviedata&& moviedata.Plot}</td></tr>
                 </tbody></table>
               }
-              
-            
+              </>
+}
             </div>
             </div>
         </div>

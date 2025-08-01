@@ -1,8 +1,9 @@
 'use client'
 import { apiURL } from "@/services/services"
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, FormEventHandler, useEffect, useState } from "react";
 import { IMovie } from "@/services/types";
 import { Loader } from "./Loader";
+import { PulseLoader } from "react-spinners";
 
 interface IMovieForm{
     id:unknown;
@@ -16,7 +17,7 @@ const AddMovieForm = ({id, getMovies}:IMovieForm) => {
         if(id) getMovie();
     })
 
-    const addMovie = async (e:unknown) => {
+    const addMovie = async (e) => {
         setUpdate(true)
         e.preventDefault();
         const formData = new FormData(e.currentTarget)
@@ -93,7 +94,7 @@ if(id){
                 <label>Description</label>
                 <textarea name="description" placeholder="Enter description for movie" defaultValue={movie && movie.description} minLength={10} maxLength={300} required ></textarea>
             </div>
-            <button type="submit">{id ? 'Update' : 'Add'} Movie {update && ' Updating...'}</button>
+            <button type="submit">{update ? <PulseLoader color="#ffffff" size={16}/> : id ? 'Update Movie' : 'Add Movie'}</button>
         </form>
         </>
     )
