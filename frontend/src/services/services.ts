@@ -35,11 +35,10 @@ export const getMovieData = async (title:string) => {
 }
 
 export const fader = () => {
-  const hidden = document.querySelectorAll(".movie-wrapper");
+  const hidden = document.querySelectorAll(".hide");
   hidden.forEach((item)=>{
     const pos = item.getBoundingClientRect()
       if(pos.y < 900){
-        console.log('show')
         item.classList.add('show');
       }else{
         item.classList.remove('show');

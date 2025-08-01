@@ -51,7 +51,7 @@ export const Movie = ({movie}:IMovieProps) => {
         {modal && <Modal data={movie} openModal={setModal} modal={modal}/>}
         <div
             key={movie.id}
-            className="movie-wrapper"
+            className="movie-wrapper hide"
           >
             
             <div className="movie-poster">{movie.posterUrl ? <picture><img className="movie-img"
@@ -105,7 +105,7 @@ export const MovieSearch = ({movie}:IMovieProps) => {
 }
 
 export const Modal = ({data, openModal, modal}:IModal) => {
-  const [moviedata, setMoviedata] = useState<IMovieData>({})
+  const [moviedata, setMoviedata] = useState<IMovieData | null>(null)
   useEffect(()=>{
     getMovieData(data.title).then(d=>setMoviedata(d))
   },[data.title])
@@ -126,13 +126,13 @@ export const Modal = ({data, openModal, modal}:IModal) => {
             /></picture>
             <p>{data.releaseYear} • {data.genre} • {moviedata && moviedata.Runtime}</p>
             <h1><Star size={50}/></h1>
-                <div>{!moviedata.Ratings ? <p>No ratings available</p> : moviedata.Ratings.map((rating:IRating, i)=>{
+                <div>{moviedata && !moviedata.Ratings ? <p>No ratings available</p> : moviedata && moviedata.Ratings.map((rating:IRating, i)=>{
                   return <div className="rating"  key={i}><div><Star/>{rating.Source}</div> {rating.Value}</div>
                 })}
             </div>
 
              <h1><Award size={50}/></h1>
-                <div>{!moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata.Awards}</div></div>
+                <div>{moviedata && !moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata && moviedata.Awards}</div></div>
                 }
             </div>
            

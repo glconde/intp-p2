@@ -6,7 +6,7 @@ interface ISectionTitle {
 
 const SectionTitle = ({title}:ISectionTitle) => {
     return(
-        <div className="section-title"><Film size={20}/>{title}</div>
+        <div className="section-title hide"><Film size={20}/>{title}</div>
     )
 }
 

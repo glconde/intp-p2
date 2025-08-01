@@ -3,15 +3,18 @@ import { useState, useEffect } from 'react'
 import { allMovies } from '@/services/services'
 import { IMovie } from '@/services/types'
 import { MovieSearch } from './Movie'
+
+
+
 const MenuSearch = () => {
-    const [movies, setMovies] = useState<[]>([])
-    const [searchresults, setSearchresults] = useState<[]>([])
+    const [movies, setMovies] = useState<IMovie[]>([])
+    const [searchresults, setSearchresults] = useState<IMovie[] | null>(null)
     useEffect(()=>{
         allMovies.then((m) => setMovies(m))
     })
-    const handleSearch = (e) => {
+    const handleSearch = (e: { target: { value: string } }) => {
         if(e.target.value.length >= 2 && e.target.value != ''){
-        const results = movies && movies.filter((item) => item.title.toLowerCase().includes(e.target.value.toLowerCase()) )
+        const results = movies && movies.filter((item:IMovie) => item.title.toLowerCase().includes(e.target.value.toLowerCase()) )
         setSearchresults(results);
         }else{
             setSearchresults(null)

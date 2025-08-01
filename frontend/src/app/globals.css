@@ -211,6 +211,10 @@ align-items:flex-start;
   border:solid 1px #202020;
   border-radius: 10px;
   transition:all 0.4s ease-in-out;
+}
+
+.hide{
+  transition:all 0.4s ease-in-out;
   opacity: 0;
   transform:translate(0px, 30px)
 }
