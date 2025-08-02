@@ -10,7 +10,6 @@
   --medium:1.4rem;
   --large:1.8rem;
   --elarge:2.5rem;
-
 }
 
 @font-face {
@@ -35,7 +34,7 @@ html{
 }
 
 header{
-   position: sticky;
+  position: sticky;
   top:0px;
   z-index:5;
   background-color: rgba(0,0,0,0.6);
@@ -47,7 +46,7 @@ header{
   display:flex;
   align-items: center;
   justify-content: space-between;
- position:relative;
+  position:relative;
 }
 
 .menu-logo{
@@ -85,13 +84,6 @@ a:hover{
   align-items: center;
 }
 
-.login-wrapper button{
-  
-  
-  
- 
-}
-
 button{
   font-family:var(--font);
   font-size:var(--normal);
@@ -119,22 +111,37 @@ button img{
 
 .search-wrapper{
   position:relative;
-  margin-left:10px;
+  padding:20px;
+  display:flex;
+  justify-content: center;
+  gap:10px;
 }
 
 .search-results{
-  position:absolute;
-  left:-140px;
-  right:0px;
-  top:110%;
   max-height:400px;
   overflow:auto;
   box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.4);
 }
 
+.search-button{
+  background-color: transparent;
+  padding:5px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border:none;
+  outline:none;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-button:hover{
+  background-color: transparent;
+  transform: scale(1.2);
+}
+
 .search-result{
-display:flex;
-align-items:flex-start;
+  display:flex;
+  align-items:flex-start;
   background-color:#202020;
   border-bottom: solid 1px #404040;
   padding:10px;
@@ -153,12 +160,13 @@ align-items:flex-start;
   background-color: transparent;
   border:solid 2px rgba(255,255,255,0.2);
   border-radius: 8px;
-  height:30px;
-  width:160px;
+  height:50px;
+  width:300px;
   padding-inline:10px;
   font-family: var(--font);
   color:#ffffff;
   outline:none;
+  font-size:var(--normal);
 }
 
 .search:focus{
@@ -171,7 +179,7 @@ align-items:flex-start;
 }
 
 .section-title{
-  font-size:var(--medium);
+  font-size:1.2rem;
   font-weight: 600;
   color:#ffffff;
   background-color: #000000;
@@ -275,7 +283,7 @@ align-items:flex-start;
 .movie-description{
   color:#999999;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limits text to 3 lines */
+  -webkit-line-clamp: 2; /* Limits text to 2 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -325,19 +333,17 @@ align-items:flex-start;
   height:100vh;
   z-index:19;
   background-color: rgba(0,0,0,0.9);
-
 }
 
 .modal{
   position:fixed;
-  top:0px;
+  top:4vh;
   left:50px;
   right:50px;
-  height:100vh;
+  height:96vh;
   border-radius: 20px;
   box-shadow: 2px -2px 20px 0px rgba(0,0,0,0.3);
   z-index:20;
-
 }
 
 .modal-border{
@@ -373,7 +379,7 @@ align-items:flex-start;
 }
 
 .modal-content{
-   position:absolute;
+  position:absolute;
   top:0px;
   bottom:0px;
   left:0px;
@@ -386,7 +392,6 @@ align-items:flex-start;
   overflow: auto;
   z-index:4;
 }
-
 
 .modal-content::-webkit-scrollbar, .search-results::-webkit-scrollbar{
   width:5px;
@@ -452,7 +457,6 @@ align-items:flex-start;
 
 .modal-inline-img{
   max-width:100%;
-  
   position:relative;
   aspect-ratio: 2/3;
   border-radius: 10px;
@@ -516,10 +520,12 @@ form{
   margin:auto;
   display:grid;
   gap:20px;
+  padding:20px;
 }
 
 .form-section{
   display:grid;
+  gap:5px;
 }
 
 form input, form select{
@@ -529,6 +535,13 @@ form input, form select{
   padding-inline:10px;
   font-family:var(--font);
   font-size:var(--normal);
+  outline:none;
+  background-color:#303030;
+  color:#ffffff;
+}
+
+form input:focus, form select:focus, form textarea:focus{
+  outline:solid 4px rgba(255,255,255,0.5);
 }
 
 form textarea{
@@ -541,10 +554,8 @@ form textarea{
   resize: none;
   height:120px;
   padding-top:10px;
-}
-
-form button{
-
+  background-color:#303030;
+  color:#ffffff;
 }
 
 .dashboard-section{
@@ -599,7 +610,6 @@ outline:2px solid yellow;
   position:relative;
   justify-content: flex-end;
   gap:5px;
-
 }
 
 .table-buttons button{
@@ -627,7 +637,6 @@ td{
 
 thead td{
   font-weight: 700;
-
 }
 
 thead{
@@ -711,11 +720,19 @@ footer{
     grid-template-columns: 1fr 1fr;
   }
 
-  .modal-content-section2{
-  grid-template-columns: 1fr;
-}
-}
+  .modal{
+    left:15px;
+    right:15px;
+  }
 
+  .modal-content{
+    padding:30px;
+  }
+
+  .modal-content-section2{
+    grid-template-columns: 1fr;
+  }
+}
 
 @media screen and (max-width: 530px){
 
@@ -728,14 +745,25 @@ footer{
     right:0px;
   }
 
-  .modal-content-section2{
-  grid-template-columns: 1fr;
-}
+  .modal-content{
+    padding:20px;
+  }
 
-  .movies-wrapper{
+  .modal-content-section2{
     grid-template-columns: 1fr;
   }
-}
 
+  .movie-title{
+    font-size:1.2rem;
+  }
+
+  .movie-description{
+    font-size: var(--small);
+  }
+
+  .movies-wrapper{
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 
