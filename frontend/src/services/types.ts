@@ -1,4 +1,5 @@
 export interface IMovie {
+
   id: number;
   title: string;
   releaseYear: number;
@@ -11,3 +12,4 @@ export interface IPageLink {
   path: string;
   title: string;
 }
+

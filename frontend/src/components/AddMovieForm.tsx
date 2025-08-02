@@ -1,6 +1,6 @@
-"use client";
-import { apiURL } from "@/services/services";
-import { FormEvent, useEffect, useState, useRef } from "react";
+'use client'
+import { apiURL } from "@/services/services"
+import { useEffect, useState } from "react";
 import { IMovie } from "@/services/types";
 import { Loader } from "./Loader";
 import { PulseLoader } from "react-spinners";
@@ -10,25 +10,49 @@ interface IMovieForm {
   getMovies: () => void;
 }
 
-const AddMovieForm = ({ id, getMovies }: IMovieForm) => {
-  const [movie, setMovie] = useState<IMovie>();
-  const [message, setMessage] = useState("");
-  const [update, setUpdate] = useState(false);
-  const formRef = useRef<HTMLFormElement | null>(null);
+const AddMovieForm = ({id, getMovies}:IMovieForm) => {
+    const [movie, setMovie] = useState<IMovie>()
+    const [message, setMessage] = useState<string>('')
+    const [update, setUpdate] = useState<boolean>(false)
+    useEffect(()=>{
+        if(id) getMovie();
+    },[id])
 
-  useEffect(() => {
-    if (id) getMovie();
-  }, [id]);
+    const addMovie = async (e) => {
+        setUpdate(true)
+        e.preventDefault();
+        const formData = new FormData(e.target)
+        const obj: { [key: string]: string | string[] | number } = {};
+        for(const [key, value] of formData.entries()){
+            if(key === "releaseYear" && typeof value === 'string'){
+               obj[key] = Number(value);
+            }else{
+            obj[key] = value as string;
+            }
+        }
+        try{ 
+            const add = id ? `/${id}` : ''
+            const response = await fetch(`${apiURL}/api/movies${add}`,{
+               method: id ? 'PUT' : 'POST',
+               headers: {
+                'Content-Type': 'application/json'
+                },
+               body: JSON.stringify(obj)
+            });
+            if(response.ok){
+            await response.json()
+            setMessage(`Successfully updated`)
+            setUpdate(false)
+            e.target.reset()
+            getMovies();
+            setMessage('')
+            }else{
+                setMessage('Error')
+            }
+        }catch(error){
+            alert('Error'+error)
+        }
 
-  const addMovie = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setUpdate(true);
-
-    const formData = new FormData(e.currentTarget);
-    const obj: Record<string, string | number> = {};
-
-    for (const [key, value] of formData.entries()) {
-      obj[key] = key === "releaseYear" ? Number(value) : (value as string);
     }
 
     try {
