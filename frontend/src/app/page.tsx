@@ -14,8 +14,8 @@ export default function HomePage() {
   useEffect(() => {
     //allMovies.then((m) => setMovies(m))
     allMovies.then((m) => {
-      if (m.length && "error" in m[0]) {
-        setError((m[0] as { error: string }).error);
+      if ("error" in m) {
+        setError((m as { error: string }).error);
       } else {
         setMovies(m as IMovie[]);
       }
