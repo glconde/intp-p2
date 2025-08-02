@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect, ChangeEvent } from 'react'
-import { Plus, PencilRuler, Trash, SquarePen, ChevronDown, ChevronUp } from 'lucide-react'
+import { Plus, Trash, SquarePen, ChevronDown, ChevronUp } from 'lucide-react'
 import { PulseLoader } from 'react-spinners'
 import { useRouter } from 'next/navigation'
 import { apiURL } from '@/services/services'
@@ -28,20 +28,21 @@ const Page = () => {
     }
   };
 
-  const deleteMovie = async (id: number) => {
-    const con = confirm("Are you sure you want to delete?");
-    if (con) {
-      try {
-        const response = await fetch(`${apiURL}/api/movies/${id}`, {
-          method: "DELETE",
+
+    const deleteMovie = async (id:number) => {
+        const con = confirm('Are you sure you want to delete?');
+        if(con){
+        try{
+        const response = await fetch(`${apiURL}/api/movies/${id}`,{
+            method:'DELETE',
         });
-        if (response.ok) {
-          await response.text();
-          alert("Movie was deleted successfully");
-          //getMovies();
-          setId(null);
-          setForm(false);
-          fetchMovies();
+        if(response.ok){
+            await response.text();
+            alert('Movie was deleted successfully');
+            getMovies();
+        }
+        }catch(error){
+            alert('Error+'+error);
         }
       } catch (error) {
         alert("Error+" + error);
@@ -58,7 +59,7 @@ const Page = () => {
             setResults(moviesearch);
         } else {
         try {
-            setResults(null)
+            setResults(null);
             await getMovies(); // Assuming getMovies is async
         } catch (error) {
             console.error('Error fetching movies:', error);
@@ -75,8 +76,10 @@ const Page = () => {
         </section>
         <section className="dashboard-section2"><div className="toggle-div" onClick={()=>setVisible(!isVisible)}>View Movies {!isVisible ? <ChevronDown size={20}/> :<ChevronUp size={20}/> }</div></section>
         { isVisible &&
-        <><div className="dashboard-search"><input type="search" placeholder="Search movies" onChange={handleSearch}/></div>
+        <>
+        <div className="dashboard-search"><input type="search" placeholder="Search movies" onChange={handleSearch}/></div>
         <section className="dashboard-section2">
+            {!movies ? <PulseLoader color="yellow"/> : 
             <table>
                 <thead>
                 <tr>
@@ -87,13 +90,13 @@ const Page = () => {
                 </tr>
                 </thead>
                 <tbody>
-            {!movies ? <PulseLoader color="yellow"/> : results ? 
-            results.map((movie, i)=>{
+            
+            { results ? results.map((movie, i)=>{
                 return <tr key={i}>
                     <td>{movie.title}</td>
                     <td>{movie.releaseYear}</td>
                     <td>{movie.genre}</td>
-                    <td><div className="table-buttons"><button onClick={()=>{setId(movie.id); setForm(!form)}}><SquarePen/></button><button onClick={()=>{deleteMovie(movie.id) }}><Trash/></button></div></td>
+                    <td className="table-buttons"><button onClick={()=>{setId(movie.id); setForm(!form)}}><SquarePen/></button><button onClick={()=>{deleteMovie(movie.id) }}><Trash/></button></td>
                 </tr>  
             }) :
             
@@ -102,14 +105,17 @@ const Page = () => {
                     <td>{movie.title}</td>
                     <td>{movie.releaseYear}</td>
                     <td>{movie.genre}</td>
-                    <td><div className="table-buttons"><button onClick={()=>{setId(movie.id); setForm(!form)}}><SquarePen/></button><button onClick={()=>{deleteMovie(movie.id) }}><Trash/></button></div></td>
+                    <td className="table-buttons"><button onClick={()=>{setId(movie.id); setForm(!form)}}><SquarePen/></button><button onClick={()=>{deleteMovie(movie.id) }}><Trash/></button></td>
                 </tr>  
             })}
              </tbody>
             </table>
+        
+        }
         </section></>
         }
-        </>
+    </>
+    
     )
 }
 
