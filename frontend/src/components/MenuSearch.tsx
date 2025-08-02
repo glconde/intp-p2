@@ -13,9 +13,8 @@ const MenuSearch = () => {
 
      useEffect(() => {
     allMovies.then((m) => {
-      if (m.length && "error" in m[0]) {
-        console.error((m[0] as { error: string }).error);
-        setMovies([]);
+      if ("error" in m) {
+        setMovies([])
       } else {
         setMovies(m as IMovie[]);
       }

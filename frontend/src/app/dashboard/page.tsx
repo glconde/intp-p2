@@ -11,11 +11,11 @@ import { useAuth } from '@/services/AuthContext'
 import { allMovies } from '@/services/services'
 
 const Page = () => {
-    const [movies, setMovies] = useState<IMovie[] | null>(null)
+    const [movies, setMovies] = useState<IMovie[] | undefined>(undefined)
    const [results, setResults] = useState<IMovie[] | null>(null)
     const [isVisible, setVisible] = useState(true)
     const [form, setForm] = useState<boolean>(false)
-    const [id, setId] = useState<unknown>(null)
+    const [id, setId] = useState<number | null>(null)
     const { user } = useAuth()
     const router = useRouter()
     useEffect(()=>{
@@ -26,8 +26,8 @@ const Page = () => {
     
 
 
-  const getMovies = async () => {
-        allMovies.then((m)=>setMovies(m));
+  const getMovies = () => {
+        allMovies.then((m)=>{if('error' in m){setMovies(undefined);}else{setMovies(m);}});
 
     }
 

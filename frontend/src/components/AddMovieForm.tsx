@@ -1,21 +1,23 @@
 'use client'
 import { apiURL } from "@/services/services"
 import { ChangeEvent, useEffect, useState } from "react";
-import { IMovie } from "@/services/types";
 import { Loader } from "./Loader";
 import { PulseLoader } from "react-spinners";
-
+import { getMovieById } from "@/services/services";
+import { IMovie } from "@/services/types";
 interface IMovieForm {
-  id: unknown | null;
+  id: number | null;
   getMovies: () => void;
 }
 
+
 const AddMovieForm = ({id, getMovies}:IMovieForm) => {
-    const [movie, setMovie] = useState<IMovie>()
+    const [movie, setMovie] = useState<IMovie | undefined>(undefined)
     const [message, setMessage] = useState<string>('')
     const [update, setUpdate] = useState<boolean>(false)
+
     useEffect(()=>{
-        if(id) getMovies();
+        if(id) getMovieById(id).then((m)=>{if('error' in m){setMovie(undefined);}else{setMovie(m)}});
     },[id])
 
     const addMovie = async (e: ChangeEvent<HTMLFormElement>) => {

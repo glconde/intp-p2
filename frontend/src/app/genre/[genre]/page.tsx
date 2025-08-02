@@ -6,7 +6,7 @@ export async function generateStaticParams() {
   const movies = await allMovies;
 
   // Check if we got an error
-  if (!movies.length || "error" in movies[0]) {
+  if ('error' in movies) {
     return [];
   }
 

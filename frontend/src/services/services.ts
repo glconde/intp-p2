@@ -7,7 +7,7 @@ export const apiURL =
  * Legacy: single-use promise (kept for backward compatibility)
  * Works with `.then()` pattern: allMovies.then(...)
  */
-export const allMovies: Promise<IMovie[] | { error: string }[]> = fetch(
+export const allMovies: Promise<IMovie[] | { error: string }> = fetch(
   `${apiURL}/api/movies`
 )
   .then(async (res) => {
