@@ -1,21 +1,23 @@
 'use client'
 import { apiURL } from "@/services/services"
 import { ChangeEvent, useEffect, useState } from "react";
-import { IMovie } from "@/services/types";
 import { Loader } from "./Loader";
 import { PulseLoader } from "react-spinners";
-
+import { getMovieById } from "@/services/services";
+import { IMovie } from "@/services/types";
 interface IMovieForm {
   id: number | null;
   getMovies: () => void;
 }
 
+
 const AddMovieForm = ({id, getMovies}:IMovieForm) => {
-    const [movie, setMovie] = useState<IMovie>()
+    const [movie, setMovie] = useState<IMovie | undefined>(undefined)
     const [message, setMessage] = useState<string>('')
     const [update, setUpdate] = useState<boolean>(false)
+
     useEffect(()=>{
-        if(id) getMovie();
+        if(id) getMovieById(id).then((m)=>{if('error' in m){setMovie(undefined);}else{setMovie(m)}});
     },[id])
 
     const addMovie = async (e: ChangeEvent<HTMLFormElement>) => {
@@ -55,31 +57,7 @@ const AddMovieForm = ({id, getMovies}:IMovieForm) => {
 
     }
 
-    try {
-      const endpoint = id ? `/${id}` : "";
-      const response = await fetch(`${apiURL}/api/movies${endpoint}`, {
-        method: id ? "PUT" : "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(obj),
-      });
-
-      if (response.ok) {
-        await response.json();
-        setMessage(
-          id ? "Movie updated successfully!" : "Movie added successfully!"
-        );
-        getMovies();
-        if (!id && formRef.current) formRef.current.reset();
-      } else {
-        setMessage("Error saving movie.");
-      }
-    } catch (error) {
-      setMessage("Error: " + error);
-    } finally {
-      setUpdate(false);
-      setTimeout(() => setMessage(""), 2000);
-    }
-  };
+   
 
 if(id){
     if(!movie) return <Loader/>
