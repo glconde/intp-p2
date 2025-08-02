@@ -1,8 +1,8 @@
 // src/components/UpdateMovieForm.tsx
-'use client';
-import { apiURL } from '@/services/services';
-import { FormEvent } from 'react';
-import { IMovie } from '@/services/types';
+"use client";
+import { apiURL } from "@/services/services";
+import { FormEvent } from "react";
+import { IMovie } from "@/services/types";
 
 // Define the shape of the movie data
 interface MovieData {
@@ -19,33 +19,52 @@ interface UpdateMovieFormProps {
   initialData: MovieData | null;
 }
 
-export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProps) {
+export default function UpdateMovieForm({
+  id,
+  initialData,
+}: UpdateMovieFormProps) {
   const addMovie = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const obj: MovieData = {
-      title: '',
+      title: "",
       releaseYear: 0,
-      genre: '',
-      posterUrl: '',
-      description: '',
+      genre: "",
+      posterUrl: "",
+      description: "",
     };
 
+    // for (const [key, value] of formData.entries()) {
+    //   if (typeof value === 'string') {
+    //     if (key === 'releaseYear') {
+    //       obj[key] = Number(value);
+    //     } else {
+    //       obj[key as keyof MovieData] = value;
+    //     }
+    //   }
+    // }
+
     for (const [key, value] of formData.entries()) {
-      if (typeof value === 'string') {
-        if (key === 'releaseYear') {
-          obj[key] = Number(value);
-        } else {
-          obj[key as keyof MovieData] = value;
+      if (typeof value === "string") {
+        if (key === "releaseYear") {
+          obj.releaseYear = Number(value);
+        } else if (key === "posterUrl") {
+          obj.posterUrl = value;
+        } else if (key === "title") {
+          obj.title = value;
+        } else if (key === "genre") {
+          obj.genre = value;
+        } else if (key === "description") {
+          obj.description = value;
         }
       }
     }
 
     try {
       const response = await fetch(`${apiURL}/api/movies/${id}`, {
-        method: 'PUT',
+        method: "PUT",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(obj),
       });
@@ -55,12 +74,16 @@ export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProp
       }
 
       const data = await response.json();
-      console.log('Success:', data, 'Sent:', obj);
-      alert('Movie updated successfully!');
+      console.log("Success:", data, "Sent:", obj);
+      alert("Movie updated successfully!");
       //e.currentTarget.reset(); // Reset form after successful submission
     } catch (error) {
-      console.error('Error updating movie:', error);
-      alert(`Failed to update movie: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      console.error("Error updating movie:", error);
+      alert(
+        `Failed to update movie: ${
+          error instanceof Error ? error.message : "Unknown error"
+        }`
+      );
     }
   };
 
@@ -73,7 +96,7 @@ export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProp
             type="text"
             name="title"
             placeholder="Enter movie title"
-            defaultValue={initialData?.title || ''}
+            defaultValue={initialData?.title || ""}
             required
           />
         </div>
@@ -83,7 +106,7 @@ export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProp
             type="number"
             name="releaseYear"
             placeholder="Enter year of release"
-            defaultValue={initialData?.releaseYear || ''}
+            defaultValue={initialData?.releaseYear || ""}
             required
           />
         </div>
@@ -93,7 +116,7 @@ export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProp
             type="text"
             name="genre"
             placeholder="Enter genre of movie"
-            defaultValue={initialData?.genre || ''}
+            defaultValue={initialData?.genre || ""}
             required
           />
         </div>
@@ -103,7 +126,7 @@ export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProp
             type="text"
             placeholder="Poster link"
             name="posterUrl"
-            defaultValue={initialData?.posterUrl || ''}
+            defaultValue={initialData?.posterUrl || ""}
           />
         </div>
         <div className="form-section">
@@ -111,7 +134,7 @@ export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProp
           <textarea
             name="description"
             placeholder="Enter description for movie"
-            defaultValue={initialData?.description || ''}
+            defaultValue={initialData?.description || ""}
             required
           />
         </div>

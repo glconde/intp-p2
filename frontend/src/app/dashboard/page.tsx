@@ -24,24 +24,30 @@ const Page = () => {
 
     const getMovies = async () => {
         allMovies.then((m)=>setMovies(m));
+
+    }
+  };
+
+  const deleteMovie = async (id: number) => {
+    const con = confirm("Are you sure you want to delete?");
+    if (con) {
+      try {
+        const response = await fetch(`${apiURL}/api/movies/${id}`, {
+          method: "DELETE",
+        });
+        if (response.ok) {
+          await response.text();
+          alert("Movie was deleted successfully");
+          //getMovies();
+          setId(null);
+          setForm(false);
+          fetchMovies();
+        }
+      } catch (error) {
+        alert("Error+" + error);
+      }
     }
 
-    const deleteMovie = async (id:number) => {
-        const con = confirm('Are you sure you want to delete?')
-        if(con){
-        try{
-        const response = await fetch(`${apiURL}/api/movies/${id}`,{
-            method:'DELETE',
-        });
-        if(response.ok){
-            await response.text();
-            alert('Movie was deleted successfully')
-            getMovies();
-        }
-        }catch(error){
-            alert('Error+'+error)
-        }
-    }
     }
 
     const handleSearch = async (e: ChangeEvent<HTMLInputElement>) => {
@@ -107,4 +113,5 @@ const Page = () => {
     )
 }
 
-export default Page
+
+export default Page;

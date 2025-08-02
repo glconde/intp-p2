@@ -1,46 +1,27 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { Movie, Modal} from "@/components/Movie";
-import SectionTitle from "@/components/SectionTitle";
-import { allMovies, fader } from "@/services/services";
+import { allMovies } from "@/services/services";
+import GenreClientPage from "./GenreClientPage";
 import { IMovie } from "@/services/types";
-import { PulseLoader } from "react-spinners";
-import { useParams } from "next/navigation";
 
+export async function generateStaticParams() {
+  const movies = await allMovies;
 
-const Page = () => {
-  const [movies, setMovies] = useState<[]>([]);
-  const [error, setError] = useState<string | null>(null);
-const { genre } = useParams<{genre:string}>()
-  useEffect(() => {
-    
-    allMovies.then((m) => setMovies(m))
-    scroller(); 
-  },[]);
-
-  const scroller = () => {
-    setTimeout(()=>fader(),1000)
-    window.addEventListener("scroll",()=>{
-      fader()
-    })
+  // Check if we got an error
+  if (!movies.length || "error" in movies[0]) {
+    return [];
   }
 
-   const filter = movies && movies.filter((item:IMovie) => item.genre.toLowerCase().includes('romance'))
-  return (
-    <main className="page">
-      
-      {error && <div className="message" style={{ color: "red" }}>Error: {error}</div>}
-      {!error && movies.length === 0 && <div className="message"><PulseLoader color="yellow"/></div>}
-
-      <SectionTitle title={genre}/>
-      <section className="movies-wrapper">
-        {filter && filter.map((movie,i) => (
-          <Movie key={i} movie={movie}/>
-        ))}
-      </section>
-      </main>
+  // Now movies is IMovie[]
+  const uniqueGenres = Array.from(
+    new Set(
+      (movies as IMovie[]).flatMap((m) =>
+        m.genre.split(",").map((g) => g.trim().toLowerCase())
+      )
     )
+  );
+
+  return uniqueGenres.map((genre) => ({ genre }));
 }
 
-export default Page
+export default function Page() {
+  return <GenreClientPage />;
+}
