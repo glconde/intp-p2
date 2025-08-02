@@ -62,7 +62,7 @@ export const deleteMovieById = async (id: number): Promise<boolean> => {
 /**
  * Fetch external OMDb metadata using title and release year
  */
-const OMDB_API_KEY = process.env.NEXT_PUBLIC_OMDB_API_KEY;
+const OMDB_API_KEY = process.env.NEXT_PUBLIC_MOVIE_API;
 
 export const getMovieData = async (title: string, releaseYear: number) => {
   try {
