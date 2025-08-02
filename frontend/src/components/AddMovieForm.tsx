@@ -20,7 +20,7 @@ const AddMovieForm = ({id, getMovies}:IMovieForm) => {
     const addMovie = async (e) => {
         setUpdate(true)
         e.preventDefault();
-        const formData = new FormData(e.currentTarget)
+        const formData = new FormData(e.target)
         const obj: { [key: string]: string | string[] | number } = {};
         for(const [key, value] of formData.entries()){
             if(key === "releaseYear" && typeof value === 'string'){

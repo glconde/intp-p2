@@ -1,6 +1,7 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { Plus, PencilRuler, Trash, SquarePen, ChevronDown, ChevronUp } from 'lucide-react'
+import { PulseLoader } from 'react-spinners'
 import { useRouter } from 'next/navigation'
 import { apiURL } from '@/services/services'
 import { IMovie } from '@/services/types'
@@ -9,8 +10,8 @@ import FormModal from '@/components/FormModal'
 import { useAuth } from '@/services/AuthContext'
  import { allMovies } from '@/services/services'
 const Page = () => {
-    const [movies, setMovies] = useState<IMovie[]>([])
-   
+    const [movies, setMovies] = useState<IMovie[] | null>(null)
+   const [results, setResults] = useState<IMovie[] | null>(null)
     const [isVisible, setVisible] = useState(true)
     const [form, setForm] = useState<boolean>(false)
     const [id, setId] = useState<unknown>(null)
@@ -19,9 +20,9 @@ const Page = () => {
     useEffect(()=>{
         if(!user){router.replace('/');}
         getMovies()
-    },[])
+    },[user, router])
 
-    const getMovies = () => {
+    const getMovies = async () => {
         allMovies.then((m)=>setMovies(m));
     }
 
@@ -43,19 +44,25 @@ const Page = () => {
     }
     }
 
-    const handleSearch = (e:{ target: { value: string } }) => {
-      
-        if(e.target.value.length >= 2 && e.target.value != "" ){
-        const moviesearch = movies && movies.filter((item:IMovie) => item.title.toLowerCase().includes(e.target.value.toLowerCase()) )
-        setMovies(moviesearch)
-        }else{
-            getMovies()
+    const handleSearch = async (e: ChangeEvent<HTMLInputElement>) => {
+        const searchValue = e.target.value.trim(); 
+        if (searchValue.length > 1) {
+            const moviesearch = movies?.filter((item: IMovie) =>
+            item.title?.toLowerCase().includes(searchValue.toLowerCase())) || [];
+            setResults(moviesearch);
+        } else {
+        try {
+            setResults(null)
+            await getMovies(); // Assuming getMovies is async
+        } catch (error) {
+            console.error('Error fetching movies:', error);
         }
-    }
+        }
+    };
     
     return(
         <>
-        { form && <FormModal form={form} setForm={setForm} setId={setId} getMovies={getMovies}><AddMovieForm id={id} getMovies={getMovies}/></FormModal>}
+        { form && <FormModal form={form} setForm={setForm} setId={setId}><AddMovieForm id={id} getMovies={getMovies}/></FormModal>}
         <section className="dashboard-section">
             <div className="dashboard-link" onClick={()=>setForm(!form)}><Plus size={80}/><div>Add Movie</div></div>
             
@@ -74,15 +81,24 @@ const Page = () => {
                 </tr>
                 </thead>
                 <tbody>
-            {movies ? movies.map((movie, i)=>{
+            {!movies ? <PulseLoader color="yellow"/> : results ? 
+            results.map((movie, i)=>{
                 return <tr key={i}>
                     <td>{movie.title}</td>
                     <td>{movie.releaseYear}</td>
                     <td>{movie.genre}</td>
                     <td><div className="table-buttons"><button onClick={()=>{setId(movie.id); setForm(!form)}}><SquarePen/></button><button onClick={()=>{deleteMovie(movie.id) }}><Trash/></button></div></td>
-                </tr>
-               
-            }) : 'Loading...' }
+                </tr>  
+            }) :
+            
+            movies.map((movie, i)=>{
+                return <tr key={i}>
+                    <td>{movie.title}</td>
+                    <td>{movie.releaseYear}</td>
+                    <td>{movie.genre}</td>
+                    <td><div className="table-buttons"><button onClick={()=>{setId(movie.id); setForm(!form)}}><SquarePen/></button><button onClick={()=>{deleteMovie(movie.id) }}><Trash/></button></div></td>
+                </tr>  
+            })}
              </tbody>
             </table>
         </section></>

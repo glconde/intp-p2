@@ -127,7 +127,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
               src={data.posterUrl}
               alt={data.title}
             /></picture></div>
-            <p>{data.releaseYear} • {data.genre} • {moviedata && moviedata.Runtime}</p>
+            <p>{data.releaseYear} • {data.genre} • {moviedata?.Runtime}</p>
             { !moviedata ? <PropagateLoader color="yellow"/>: 
             <>
             <div className="modal-content-section2">
@@ -140,7 +140,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
 </div>
 <div className="mcs">
              <h1><Award size={80}/></h1>
-                <div>{moviedata && !moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata && moviedata.Awards}</div></div>
+                <div>{!moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata.Awards}</div></div>
                 }
             </div>
             </div>
@@ -150,12 +150,12 @@ export const Modal = ({data, openModal, modal}:IModal) => {
             {
             
              <table><tbody>
-                <tr><td>Director</td><td>{moviedata && moviedata.Director}</td></tr>
-                <tr><td>Actors</td><td>{moviedata&& moviedata.Actors}</td></tr>
-                <tr><td>Writers</td><td>{moviedata&& moviedata.Writer}</td></tr>
-                <tr><td>Languages</td><td>{moviedata&& moviedata.Language}</td></tr>
-                <tr><td>Box Office</td><td>{moviedata&& moviedata.BoxOffice}</td></tr>
-                <tr><td>Plot</td><td>{moviedata&& moviedata.Plot}</td></tr>
+                <tr><td>Director</td><td>{moviedata.Director}</td></tr>
+                <tr><td>Actors</td><td>{moviedata.Actors}</td></tr>
+                <tr><td>Writers</td><td>{ moviedata.Writer}</td></tr>
+                <tr><td>Languages</td><td>{moviedata.Language}</td></tr>
+                <tr><td>Box Office</td><td>{moviedata.BoxOffice}</td></tr>
+                <tr><td>Plot</td><td>{moviedata.Plot}</td></tr>
                 </tbody></table>
           
               }
