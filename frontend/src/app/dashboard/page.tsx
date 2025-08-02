@@ -11,7 +11,7 @@ import { useAuth } from '@/services/AuthContext'
 const Page = () => {
     const [movies, setMovies] = useState<IMovie[]>([])
    
-    const [isVisible, setVisible] = useState(false)
+    const [isVisible, setVisible] = useState(true)
     const [form, setForm] = useState<boolean>(false)
     const [id, setId] = useState<unknown>(null)
     const { user } = useAuth()
@@ -42,6 +42,16 @@ const Page = () => {
         }
     }
     }
+
+    const handleSearch = (e:{ target: { value: string } }) => {
+      
+        if(e.target.value.length >= 2 && e.target.value != "" ){
+        const moviesearch = movies && movies.filter((item:IMovie) => item.title.toLowerCase().includes(e.target.value.toLowerCase()) )
+        setMovies(moviesearch)
+        }else{
+            getMovies()
+        }
+    }
     
     return(
         <>
@@ -52,6 +62,7 @@ const Page = () => {
         </section>
         <section className="dashboard-section2"><div className="toggle-div" onClick={()=>setVisible(!isVisible)}>View Movies {!isVisible ? <ChevronDown size={20}/> :<ChevronUp size={20}/> }</div></section>
         { isVisible &&
+        <><div className="dashboard-search"><input type="search" placeholder="Search movies" onChange={handleSearch}/></div>
         <section className="dashboard-section2">
             <table>
                 <thead>
@@ -74,7 +85,7 @@ const Page = () => {
             }) : 'Loading...' }
              </tbody>
             </table>
-        </section>
+        </section></>
         }
         </>
     )

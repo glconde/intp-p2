@@ -109,21 +109,24 @@ export const Modal = ({data, openModal, modal}:IModal) => {
   useEffect(()=>{
     getMovieData(data.title, data.releaseYear).then(d=>setMoviedata(d))
   },[data.title, data.releaseYear])
-    return(
+    return(<>
+      <div className="tint"></div>
         <div className="modal">
           <picture><img className="modal-background"
               src={data.posterUrl}
               alt={data.title}
             /></picture>
+            <div className="modal-blur"></div>
+            <div className="modal-border"></div>
             <div className="modal-content">
             <div className="modal-header"><CircleX onClick={()=>openModal(!modal)} size={30}/></div>
             <div className="modal-content-section">
             <div className="modal-title">{data.title}</div>
             <p className="modal-description">{data.description}</p>
-            <picture><img className="modal-inline-img"
+            <div className="picture"><picture><img className="modal-inline-img"
               src={data.posterUrl}
               alt={data.title}
-            /></picture>
+            /></picture></div>
             <p>{data.releaseYear} • {data.genre} • {moviedata && moviedata.Runtime}</p>
             { !moviedata ? <PropagateLoader color="yellow"/>: 
             <>
@@ -161,5 +164,6 @@ export const Modal = ({data, openModal, modal}:IModal) => {
             </div>
             </div>
         </div>
+        </>
     )
 }

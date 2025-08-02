@@ -1,6 +1,6 @@
 'use client'
 import { apiURL } from "@/services/services"
-import { FormEvent, FormEventHandler, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IMovie } from "@/services/types";
 import { Loader } from "./Loader";
 import { PulseLoader } from "react-spinners";
