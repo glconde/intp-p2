@@ -1,6 +1,6 @@
 'use client'
 import { apiURL } from "@/services/services"
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { IMovie } from "@/services/types";
 import { Loader } from "./Loader";
 import { PulseLoader } from "react-spinners";
@@ -17,7 +17,7 @@ const AddMovieForm = ({id, getMovies}:IMovieForm) => {
         if(id) getMovie();
     })
 
-    const addMovie = async (e) => {
+    const addMovie = async (e: ChangeEvent<HTMLFormElement>) => {
         setUpdate(true)
         e.preventDefault();
         const formData = new FormData(e.target)
@@ -88,7 +88,7 @@ if(id){
             </div>
             <div className="form-section">
                 <label>Poster URL</label>
-                <input type="text" placeholder="Poster link" name="posterUrl" defaultValue={movie && movie.posterUrl} minLength={10} required/>
+                <input type="url" placeholder="Poster link" name="posterUrl" defaultValue={movie && movie.posterUrl} minLength={10} required/>
             </div>
             <div className="form-section">
                 <label>Description</label>

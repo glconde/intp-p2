@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Movie, Modal} from "@/components/Movie";
+import { Movie} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
 import { allMovies, fader } from "@/services/services";
 import { IMovie } from "@/services/types";

@@ -53,7 +53,6 @@ export const Movie = ({movie}:IMovieProps) => {
             key={movie.id}
             className="movie-wrapper hide"
           >
-            
             <div className="movie-poster">{movie.posterUrl ? <picture><img className="movie-img"
               src={movie.posterUrl}
               alt={movie.title}
@@ -132,35 +131,33 @@ export const Modal = ({data, openModal, modal}:IModal) => {
             <>
             <div className="modal-content-section2">
               <div className="mcs">
-            <h1><Star size={80} /></h1>
+                <h1><Star size={80} /></h1>
                 <div>{moviedata && !moviedata.Ratings ? <p>No ratings available</p> : moviedata && moviedata.Ratings.map((rating:IRating, i)=>{
                   return <div className="rating"  key={i}><div>{rating.Source}</div> {rating.Value}</div>
                 })}
+              </div>
+              </div>
+              <div className="mcs">
+                <h1><Award size={80}/></h1>
+                  <div>{!moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata.Awards}</div></div>
+                      }
+                  </div>
+              </div>
             </div>
-</div>
-<div className="mcs">
-             <h1><Award size={80}/></h1>
-                <div>{!moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata.Awards}</div></div>
-                }
-            </div>
-            </div>
-            </div>
-           
-       
             {
-            
-             <table><tbody>
+            <table>
+              <tbody>
                 <tr><td>Director</td><td>{moviedata.Director}</td></tr>
                 <tr><td>Actors</td><td>{moviedata.Actors}</td></tr>
                 <tr><td>Writers</td><td>{ moviedata.Writer}</td></tr>
                 <tr><td>Languages</td><td>{moviedata.Language}</td></tr>
                 <tr><td>Box Office</td><td>{moviedata.BoxOffice}</td></tr>
                 <tr><td>Plot</td><td>{moviedata.Plot}</td></tr>
-                </tbody></table>
-          
+              </tbody>
+            </table>
               }
               </>
-}
+            }
             </div>
             </div>
         </div>
