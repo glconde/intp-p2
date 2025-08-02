@@ -1,3 +1,4 @@
+/*
 // src/components/UpdateMovieForm.tsx
 'use client';
 import { apiURL } from '@/services/services';
@@ -120,3 +121,4 @@ export default function UpdateMovieForm({ id, initialData }: UpdateMovieFormProp
     </>
   );
 }
+  */
