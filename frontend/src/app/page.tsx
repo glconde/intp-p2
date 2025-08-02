@@ -1,76 +1,137 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-
-type Movie = {
-  id: number;
-  title: string;
-  releaseYear: number;
-  genre: string;
-  posterUrl: string;
-  description: string;
-};
+import { Movie, Modal } from "@/components/Movie";
+import SectionTitle from "@/components/SectionTitle";
+import { allMovies, fader } from "@/services/services";
+import { IMovie } from "@/services/types";
+import { PulseLoader } from "react-spinners";
 
 export default function HomePage() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
   const [error, setError] = useState<string | null>(null);
 
-  const apiURL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
-
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const res = await fetch(`${apiURL}/api/movies`);
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        const data = await res.json();
-        setMovies(data);
-      } catch (err: unknown) {
-        console.error("Failed to fetch movies:", err);
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("An unknown error occurred");
-        }
+    //allMovies.then((m) => setMovies(m))
+    allMovies.then((m) => {
+      if (m.length && "error" in m[0]) {
+        setError((m[0] as { error: string }).error);
+      } else {
+        setMovies(m as IMovie[]);
       }
-    };
+    });
+    scroller();
+  }, []);
 
-    fetchMovies();
-  }, [apiURL]); // are you happy now eslint??
+  const scroller = () => {
+    setTimeout(() => fader(), 1000);
+    window.addEventListener("scroll", () => {
+      fader();
+    });
+  };
 
-  console.log("Movies:", movies);
+  // Get Romance Movies
+  const romance =
+    movies &&
+    movies.filter((item: IMovie) =>
+      item.genre.toLowerCase().includes("romance")
+    );
+
+  // Get Action Movies
+  const action =
+    movies &&
+    movies.filter((item: IMovie) =>
+      item.genre.toLowerCase().includes("action")
+    );
+
+  // Get Drama Movies
+  const drama =
+    movies &&
+    movies.filter((item: IMovie) => item.genre.toLowerCase().includes("drama"));
+
+  // Get Comedy Movies
+  const comedy =
+    movies &&
+    movies.filter((item: IMovie) =>
+      item.genre.toLowerCase().includes("comedy")
+    );
+
+  // Get Thriller Movies
+  const thriller =
+    movies &&
+    movies.filter((item: IMovie) =>
+      item.genre.toLowerCase().includes("thriller")
+    );
+
+  // Get Horror Movies
+  const horror =
+    movies &&
+    movies.filter((item: IMovie) =>
+      item.genre.toLowerCase().includes("horror")
+    );
+
+  // Get Old Movies
+  const oldmovies =
+    movies && movies.filter((item: IMovie) => item.releaseYear < 1990);
+
+  // Get Latest Movies
+  const latest =
+    movies && movies.filter((item: IMovie) => item.releaseYear === 2025);
 
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Action Movies</h1>
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
-      {!error && movies.length === 0 && <p>Loading...</p>}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-        {movies.map((movie) => (
-          <div
-            key={movie.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "1rem",
-              width: "250px",
-            }}
-          >
-            <Image
-              src={movie.posterUrl}
-              alt={movie.title}
-              width={250}
-              style={{ objectFit: "cover" }}
-            />
-            <h2>{movie.title}</h2>
-            <p>
-              <strong>{movie.releaseYear}</strong> • {movie.genre}
-            </p>
-            <p>{movie.description}</p>
-          </div>
-        ))}
-      </div>
+    <main className="page">
+      {error && (
+        <div className="message" style={{ color: "red" }}>
+          Error: {error}
+        </div>
+      )}
+      {!error && movies.length === 0 && (
+        <div className="message">
+          <PulseLoader color="yellow" />
+        </div>
+      )}
+
+      <SectionTitle title="The Latest" />
+      <section className="movies-wrapper">
+        {latest && latest.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
+
+      <SectionTitle title="Action" />
+      <section className="movies-wrapper">
+        {action && action.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
+
+      <SectionTitle title="Romance" />
+      <section className="movies-wrapper">
+        {romance && romance.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
+
+      <SectionTitle title="Dramas" />
+      <section className="movies-wrapper">
+        {drama && drama.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
+
+      <SectionTitle title="Comedies" />
+      <section className="movies-wrapper">
+        {comedy && comedy.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
+
+      <SectionTitle title="Thrillers" />
+      <section className="movies-wrapper">
+        {thriller &&
+          thriller.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
+
+      <SectionTitle title="Old Movies" />
+      <section className="movies-wrapper">
+        {oldmovies &&
+          oldmovies.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
+
+      <SectionTitle title="Horrors" />
+      <section className="movies-wrapper">
+        {horror && horror.map((movie, i) => <Movie key={i} movie={movie} />)}
+      </section>
     </main>
   );
 }

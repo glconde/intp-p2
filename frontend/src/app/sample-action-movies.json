@@ -1,0 +1,1138 @@
+[
+    {
+        "id": 1,
+        "title": "John Wick",
+        "releaseYear": 2014,
+        "genre": "Action",
+        "posterUrl": "https://m.media-amazon.com/images/I/71ucSvBl6pL.jpg",
+        "description": "An ex-hitman comes out of retirement to track down the gangsters that killed his dog."
+    },
+    {
+        "id": 2,
+        "title": "Mad Max: Fury Road",
+        "releaseYear": 2015,
+        "genre": "Action, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/I/715dDARDrGL._UF894,1000_QL80_.jpg",
+        "description": "In a post-apocalyptic wasteland, Max helps a rebellious woman and a group of female prisoners."
+    },
+    {
+        "id": 3,
+        "title": "Mission: Impossible – Fallout",
+        "releaseYear": 2018,
+        "genre": "Action",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTM5M1g5MDA=/z/edsAAOSw28RmsjDT/$_57.JPG?set_id=880000500F",
+        "description": "Ethan Hunt and his team must stop a global catastrophe while being pursued by assassins."
+    },
+    {
+        "id": 5,
+        "title": "Nobody",
+        "releaseYear": 2021,
+        "genre": "Action",
+        "posterUrl": "https://m.media-amazon.com/images/I/716uFWgB5vL.jpg",
+        "description": "An underestimated dad reveals his dark past after burglars target his home."
+    },
+    {
+        "id": 6,
+        "title": "Top Gun: Maverick",
+        "releaseYear": 2022,
+        "genre": "Action, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/I/71BokibfVUL.jpg",
+        "description": "After 30 years, Maverick returns to train a new generation of elite pilots."
+    },
+    {
+        "id": 9,
+        "title": "No Time to Die",
+        "releaseYear": 2021,
+        "genre": "Action",
+        "posterUrl": "https://m.media-amazon.com/images/I/61OgI8Ih3CL.jpg",
+        "description": "James Bond comes out of retirement to confront a new villain armed with dangerous technology."
+    },
+    {
+        "id": 10,
+        "title": "The Batman",
+        "releaseYear": 2022,
+        "genre": "Action",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMmU5NGJlMzAtMGNmOC00YjJjLTgyMzUtNjAyYmE4Njg5YWMyXkEyXkFqcGc@._V1_.jpg",
+        "description": "Batman uncovers corruption in Gotham linked to his own family."
+    },
+    {
+        "id": 15,
+        "title": "Speed",
+        "releaseYear": 1994,
+        "genre": "Action",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/aZYAAOSwrTJctey0/$_57.JPG?set_id=8800005007",
+        "description": "LAPD officer Jack Traven must keep a bus rigged with a bomb from slowing down below 50 mph, while working to outsmart the bomber and save the passengers."
+    },
+    {
+        "id": 16,
+        "title": "The Bourne Identity",
+        "releaseYear": 2002,
+        "genre": "Action, Mystery, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/I/51vevuVnkHL._UF894,1000_QL80_.jpg",
+        "description": "A man with amnesia, Jason Bourne, discovers he’s a highly trained operative while evading assassins and uncovering a conspiracy within the CIA."
+    },
+    {
+        "id": 17,
+        "title": "Raiders of the Lost Ark",
+        "releaseYear": 1981,
+        "genre": "Action, Adventure",
+        "posterUrl": "https://i.ebayimg.com/images/g/5YkAAOSwysRjHjhW/s-l1200.jpg",
+        "description": "Archaeologist Indiana Jones races against Nazis to find the Ark of the Covenant, embarking on a globe-trotting adventure filled with traps, fights, and ancient mysteries."
+    },
+    {
+        "id": 18,
+        "title": "Terminator 2: Judgment Day",
+        "releaseYear": 1991,
+        "genre": "Action, Sci-Fi",
+        "posterUrl": "https://i.ebayimg.com/images/g/gBEAAOSwaNBUioa0/s-l1200.jpg",
+        "description": "A reprogrammed Terminator protects young John Connor from a more advanced, shape-shifting Terminator sent to kill him, as they work to prevent a future apocalypse."
+    },
+    {
+        "id": 19,
+        "title": "Die Hard",
+        "releaseYear": 1988,
+        "genre": "Action, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/I/51ocIDju2XL._UF894,1000_QL80_.jpg",
+        "description": "NYPD officer John McClane takes on a group of heavily armed terrorists led by Hans Gruber, who have seized a Los Angeles skyscraper where his estranged wife is among the hostages."
+    },
+    {
+        "id": 20,
+        "title": "The Dark Knight",
+        "releaseYear": 2008,
+        "genre": "Action, Crime, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/51rF2-tvXVL.jpg",
+        "description": "Batman faces the Joker, a chaotic criminal mastermind who plunges Gotham into anarchy, forcing the Caped Crusader to confront moral and physical challenges to save the city."
+    },
+    {
+        "id": 21,
+        "title": "Lethal Weapon",
+        "releaseYear": 1987,
+        "genre": "Action, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/71VGr7vZ-bL._UF894,1000_QL80_.jpg",
+        "description": "Unstable cop Martin Riggs teams up with veteran Roger Murtaugh to take down a drug-smuggling operation, blending buddy-cop banter with explosive action."
+    },
+    {
+        "id": 22,
+        "title": "The Raid: Redemption",
+        "releaseYear": 2011,
+        "genre": "Action, Thriller, Martial Arts",
+        "posterUrl": "https://m.media-amazon.com/images/I/51wlDopGRSL._UF894,1000_QL80_.jpg",
+        "description": "A SWAT team becomes trapped in a Jakarta high-rise controlled by a drug lord, fighting their way through floors of enemies in relentless, bone-crunching martial arts battles."
+    },
+    {
+        "id": 23,
+        "title": "The Notebook",
+        "releaseYear": 2004,
+        "genre": "Romance, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/81zHy+InA5L.jpg",
+        "description": "A young couple, Noah and Allie, fall passionately in love one summer, but class differences and family pressures tear them apart, only to reunite years later in an emotional journey of love and memory."
+    },
+    {
+        "id": 24,
+        "title": "Pride and Prejudice",
+        "releaseYear": 2005,
+        "genre": "Romance, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/51d5M05dlWL.jpg",
+        "description": "Elizabeth Bennet navigates societal expectations and her evolving relationship with the wealthy but initially aloof Mr. Darcy in this adaptation of Jane Austen’s classic novel."
+    },
+    {
+        "id": 25,
+        "title": "A Walk to Remember",
+        "releaseYear": 2002,
+        "genre": "Romance, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/51BAhJStiML._UF894,1000_QL80_.jpg",
+        "description": "Rebellious teen Landon falls for Jamie, a kind-hearted preacher’s daughter, whose quiet strength and faith transform his life in a touching, bittersweet love story."
+    },
+    {
+        "id": 26,
+        "title": "Notting Hill",
+        "releaseYear": 1999,
+        "genre": "Romance, Comedy",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDc0/z/xnQAAOSw-itXrHZL/$_57.JPG?set_id=8800005007",
+        "description": "A humble London bookstore owner, William, falls for a famous American actress, Anna Scott, navigating the challenges of fame and cultural differences in their charming romance."
+    },
+    {
+        "id": 27,
+        "title": "Eternal Sunshine of the Spotless Mind",
+        "releaseYear": 2004,
+        "genre": "Romance, Sci-Fi, Drama",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDc5/z/GW0AAOSw2U1iy2AU/$_57.JPG?set_id=880000500F",
+        "description": "After a painful breakup, Joel and Clementine undergo a procedure to erase each other from their memories, only to rediscover their connection in a surreal, heartfelt journey."
+    },
+    {
+        "id": 28,
+        "title": "Crazy, Stupid, Love",
+        "releaseYear": 2011,
+        "genre": "Romance, Comedy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/61I-Y1LHbjL._UF1000,1000_QL80_.jpg",
+        "description": "A divorced man, Cal, learns to navigate modern dating with the help of a suave playboy, while his family and others around him experience their own romantic entanglements."
+    },
+    {
+        "id": 29,
+        "title": "When Harry Met Sally...",
+        "releaseYear": 1989,
+        "genre": "Romance, Comedy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/51hsceP2n0L._UF1000,1000_QL80_.jpg",
+        "description": "Harry and Sally, initially just friends, navigate the complexities of friendship and romance over years, debating whether men and women can truly be platonic friends."
+    },
+    {
+        "id": 30,
+        "title": "La La Land",
+        "releaseYear": 2016,
+        "genre": "Romance, Musical, Drama",
+        "posterUrl": "https://i.ebayimg.com/images/g/OcsAAOSwpgRloPRO/s-l1200.jpg",
+        "description": "Aspiring actress Mia and jazz musician Sebastian chase their dreams in Los Angeles, falling in love but facing the challenges of balancing career ambitions with their relationship."
+    },
+    {
+        "id": 31,
+        "title": "Amélie",
+        "releaseYear": 2001,
+        "genre": "Romance, Comedy, Fantasy",
+        "posterUrl": "https://m.media-amazon.com/images/I/410XpOZSByS.jpg",
+        "description": "Amélie, a shy Parisian waitress, secretly orchestrates small acts of kindness to bring joy to others, finding her own quirky romance with a mysterious stranger along the way."
+    },
+    {
+        "id": 32,
+        "title": "The Shawshank Redemption",
+        "releaseYear": 1994,
+        "genre": "Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/71715eBi1sL._UF894,1000_QL80_.jpg",
+        "description": "Wrongly convicted banker Andy Dufresne forms a profound friendship with fellow inmate Red while enduring the hardships of prison life, finding hope in an unlikely plan for freedom."
+    },
+    {
+        "id": 33,
+        "title": "Parasite",
+        "releaseYear": 2019,
+        "genre": "Drama, Thriller, Comedy",
+        "posterUrl": "https://i.etsystatic.com/18242346/r/il/87bc12/2184703308/il_fullxfull.2184703308_jpnu.jpg",
+        "description": "A poor South Korean family cunningly infiltrates the lives of a wealthy household, leading to a darkly comedic and shocking exploration of class disparity and deception."
+    },
+    {
+        "id": 34,
+        "title": "Schindler’s List",
+        "releaseYear": 1993,
+        "genre": "Drama, Historical, Biography",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BNjM1ZDQxYWUtMzQyZS00MTE1LWJmZGYtNGUyNTdlYjM3ZmVmXkEyXkFqcGc@._V1_.jpg",
+        "description": "German industrialist Oskar Schindler risks everything to save over a thousand Jewish refugees from the Holocaust by employing them in his factory during World War II."
+    },
+    {
+        "id": 35,
+        "title": "12 Years a Slave",
+        "releaseYear": 2013,
+        "genre": "Drama, Historical, Biography",
+        "posterUrl": "https://m.media-amazon.com/images/I/61QFAKXbb5L.jpg",
+        "description": "Solomon Northup, a free Black man, is kidnapped and sold into slavery in 1840s America, enduring brutal conditions while clinging to hope for his freedom in this harrowing true story."
+    },
+    {
+        "id": 36,
+        "title": "There Will Be Blood",
+        "releaseYear": 2007,
+        "genre": "Drama, Historical",
+        "posterUrl": "https://m.media-amazon.com/images/I/61DCM7E06HL.jpg",
+        "description": "Ruthless oilman Daniel Plainview rises to power in early 20th-century America, clashing with a young preacher in a gripping tale of greed, ambition, and moral decay."
+    },
+    {
+        "id": 37,
+        "title": "Moonlight",
+        "releaseYear": 2016,
+        "genre": "Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/81iZyjuq7pL._UF894,1000_QL80_.jpg",
+        "description": "Chiron, a young Black man, navigates his identity and sexuality across three stages of life in Miami, grappling with poverty, bullying, and the search for connection."
+    },
+    {
+        "id": 38,
+        "title": "The Godfather",
+        "releaseYear": 1972,
+        "genre": "Drama, Crime",
+        "posterUrl": "https://m.media-amazon.com/images/I/510L5ypQBdL._UF894,1000_QL80_.jpg",
+        "description": "Michael Corleone reluctantly takes over his father’s mafia empire, descending into a world of power, betrayal, and violence in this epic saga of family and crime."
+    },
+    {
+        "id": 39,
+        "title": "Manchester by the Sea",
+        "releaseYear": 2016,
+        "genre": "Drama",
+        "posterUrl": "https://i.ebayimg.com/images/g/o-IAAOSwlIZgiYBF/s-l1200.jpg",
+        "description": "After his brother’s death, Lee Chandler returns to his hometown to care for his nephew, confronting past tragedies and emotional wounds in a raw, understated story of grief."
+    },
+    {
+        "id": 40,
+        "title": "One Flew Over the Cuckoo’s Nest",
+        "releaseYear": 1975,
+        "genre": "Drama, Psychological",
+        "posterUrl": "https://m.media-amazon.com/images/I/61c5Aw3wdDL.jpg",
+        "description": "Rebellious convict Randle McMurphy feigns insanity to avoid prison labor but clashes with the tyrannical Nurse Ratched in a mental institution, inspiring his fellow patients."
+    },
+    {
+        "id": 41,
+        "title": "Presence",
+        "releaseYear": 2025,
+        "genre": "Drama, Horror, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BZWRmNzM1YjktM2YyMi00M2YwLWE2YjMtNjgwNTQ3MGU3MzczXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A family moves into a suburban house and becomes convinced they’re not alone, as a ghostly presence observes their struggles, particularly around daughter Chloe, in a haunting drama told from the ghost’s perspective."
+    },
+    {
+        "id": 42,
+        "title": "Nickel Boys",
+        "releaseYear": 2025,
+        "genre": "Drama, Historical",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMGRkMzIyY2QtMjc5My00NGRjLWE5ZGUtYjRiMDNjMzAwOTU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Based on the Pulitzer Prize-winning novel, this film follows two Black teens in a brutal reform school in 1960s Florida, exploring their friendship and resilience amid systemic racism and abuse."
+    },
+    {
+        "id": 43,
+        "title": "The Life of Chuck",
+        "releaseYear": 2025,
+        "genre": "Drama, Fantasy",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BZDhlMzJhMTgtN2FhZS00OWQ1LTk3Y2ItZGNiNTQ0ZmUzYmIzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Adapted from Stephen King’s novella, this buoyant drama follows the life of Chuck Krantz in reverse, blending cosmic optimism with emotional depth in a tale of love and loss."
+    },
+    {
+        "id": 44,
+        "title": "Sinners",
+        "releaseYear": 2025,
+        "genre": "Drama, Horror, Action",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BNjIwZWY4ZDEtMmIxZS00NDA4LTg4ZGMtMzUwZTYyNzgxMzk5XkEyXkFqcGc@._V1_.jpg",
+        "description": "Twin brothers Smoke and Stack, played by Michael B. Jordan, return to their hometown during Prohibition, aiming to open a juke joint, but face a violent Irish vampire, Remmick, in this blend of historical drama and horror."
+    },
+    {
+        "id": 45,
+        "title": "The Alto Knights",
+        "releaseYear": 2025,
+        "genre": "Drama, Crime, Biography",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMjk2MDg4ZDgtZjkxMC00NmRkLTg0NDEtNDY5NTIxYWYyMWU3XkEyXkFqcGc@._V1_.jpg",
+        "description": "Robert De Niro delivers a dual performance as mobsters Frank Costello and Vito Genovese, exploring the intricate dynamics of the Italian underworld in the 1950s and 1960s in this slow-burn mafia saga."
+    },
+    {
+        "id": 46,
+        "title": "Black Bag",
+        "releaseYear": 2025,
+        "genre": "Drama, Thriller, Action",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDgw/z/usQAAOSweYVnm~os/$_57.JPG?set_id=880000500F",
+        "description": "Legendary intelligence agents George Woodhouse and Kathryn, portrayed by Michael Fassbender and Cate Blanchett, navigate a gripping espionage plot with sleek style and dry wit in Steven Soderbergh’s thriller."
+    },
+    {
+        "id": 47,
+        "title": "28 Years Later",
+        "releaseYear": 2025,
+        "genre": "Drama, Horror, Sci-Fi",
+        "posterUrl": "https://strelka.co.uk/wp-content/uploads/2024/10/28-_Years_Later_Poster_by_Adam_Blakemore_Strelka.jpg",
+        "description": "A sequel to 28 Days Later, this film follows a boy and his mother (Jodie Comer) in a post-apocalyptic world ravaged by infected, focusing on their bond amidst societal decay and horror."
+    },
+    {
+        "id": 48,
+        "title": "F1: The Movie",
+        "releaseYear": 2025,
+        "genre": "Drama, Action, Sports",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BZTYwYjJhNzYtY2ZiZS00ZmYxLWJkZjctYjRlNGIxYjI3ZTU0XkEyXkFqcGc@._V1_.jpg",
+        "description": "Brad Pitt stars in a stylish racing drama about an underdog Formula 1 team, directed by Joseph Kosinski, delivering high-octane action and emotional stakes on the track."
+    },
+    {
+        "id": 49,
+        "title": "Sister Midnight",
+        "releaseYear": 2025,
+        "genre": "Drama, Comedy, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BNjE1OTA3NDAtNDlhNC00ZjI4LWIxY2UtNmNlOTMzOTdmOTIyXkEyXkFqcGc@._V1_.jpg",
+        "description": "Newlyweds Uma and Gopal struggle in a cramped Mumbai shack, with Uma’s frustrations driving a quirky, genre-bending narrative of marital tension and urban chaos."
+    },
+    {
+        "id": 50,
+        "title": "Dune: Part Two",
+        "releaseYear": 2024,
+        "genre": "Sci-Fi, Action, Drama",
+        "posterUrl": "https://i.ebayimg.com/images/g/MtEAAOSwvsdlMXb3/s-l1200.jpg",
+        "description": "Paul Atreides unites with the Fremen to wage war against the forces that destroyed his family, grappling with his destiny and a universe-altering future."
+    },
+    {
+        "id": 51,
+        "title": "Deadpool & Wolverine",
+        "releaseYear": 2024,
+        "genre": "Action, Comedy, Sci-Fi",
+        "posterUrl": "https://m.media-amazon.com/images/I/71yGFEBm53L.jpg",
+        "description": "Deadpool recruits a reluctant Wolverine to save his universe from extinction, teaming up for a chaotic, meta-filled adventure in the Marvel Cinematic Universe."
+    },
+    {
+        "id": 52,
+        "title": "Inside Out 2",
+        "releaseYear": 2024,
+        "genre": "Animation, Comedy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/714xn6rxXSL.jpg",
+        "description": "Riley navigates her teenage years as new emotions like Anxiety and Envy disrupt her mind’s control center, leading to a heartfelt exploration of growing up."
+    },
+    {
+        "id": 53,
+        "title": "Moana 2",
+        "releaseYear": 2024,
+        "genre": "Animation, Adventure, Family",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTQ3OFgxMTgy/z/fbgAAOSwCmJnIINy/$_57.JPG?set_id=880000500F",
+        "description": "Moana embarks on a new voyage across Oceania, joined by Maui and a crew of unlikely seafarers, to break an ancient curse and reconnect her people."
+    },
+    {
+        "id": 54,
+        "title": "Furiosa: A Mad Max Saga",
+        "releaseYear": 2024,
+        "genre": "Action, Sci-Fi, Adventure",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDc5/z/SRkAAOSwhHdleIaq/$_57.JPG?set_id=880000500F",
+        "description": "Young Furiosa is kidnapped from her home and must navigate a brutal wasteland, forging her path amid warring tyrants Dementus and Immortan Joe."
+    },
+    {
+        "id": 55,
+        "title": "A Complete Unknown",
+        "releaseYear": 2024,
+        "genre": "Drama, Biography, Music",
+        "posterUrl": "https://m.media-amazon.com/images/I/61hoKQPduLL.jpg",
+        "description": "A biopic of Bob Dylan’s early career, with Timothée Chalamet portraying the folk icon’s rise to fame in 1960s New York, capturing his enigmatic artistry."
+    },
+    {
+        "id": 56,
+        "title": "Wicked: Part One",
+        "releaseYear": 2024,
+        "genre": "Musical, Fantasy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BOWMwYjYzYmMtMWQ2Ni00NWUwLTg2MzAtYzkzMDBiZDIwOTMwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "The untold story of Elphaba and Glinda’s friendship at Shiz University, exploring their transformation into the Wicked Witch and the Good Witch of Oz."
+    },
+    {
+        "id": 57,
+        "title": "The Fall Guy",
+        "releaseYear": 2024,
+        "genre": "Action, Comedy, Romance",
+        "posterUrl": "https://m.media-amazon.com/images/I/71ic9Y0ECYL.jpg",
+        "description": "A stuntman, Colt Seavers, takes on a dangerous mission to save a missing actor while rekindling his romance with a director in this action-packed tribute to Hollywood."
+    },
+    {
+        "id": 58,
+        "title": "Longlegs",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller, Crime",
+        "posterUrl": "https://m.media-amazon.com/images/I/71kOfheI2lL._UF1000,1000_QL80_.jpg",
+        "description": "FBI agent Lee Harker pursues a chilling serial killer with occult ties, uncovering personal connections in a tense, atmospheric horror-thriller."
+    },
+    {
+        "id": 59,
+        "title": "Late Night with the Devil",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://i.ebayimg.com/images/g/zbsAAOSwo4NmKXyL/s-l1200.jpg",
+        "description": "A 1970s talk show host invites supernatural chaos during a live Halloween broadcast, blending found-footage horror with retro chills."
+    },
+    {
+        "id": 60,
+        "title": "Monkey Man",
+        "releaseYear": 2024,
+        "genre": "Action, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/I/510JZ8ZTNYL._UF894,1000_QL80_.jpg",
+        "description": "A young man in Mumbai seeks revenge against corrupt elites who murdered his mother, channeling his rage in brutal, action-packed fight sequences."
+    },
+    {
+        "id": 61,
+        "title": "American Fiction",
+        "releaseYear": 2024,
+        "genre": "Drama, Comedy, Satire",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDgw/z/ofEAAOSwWj1lr90E/$_57.JPG?set_id=880000500F",
+        "description": "Author Monk Ellison writes a satirical “Black” novel to mock stereotypes, only to see it become a hit, exposing the absurdities of the publishing world."
+    },
+    {
+        "id": 62,
+        "title": "The Zone of Interest",
+        "releaseYear": 2024,
+        "genre": "Drama, Historical, War",
+        "posterUrl": "https://cdn.posteritati.com/posters/000/000/072/292/the-zone-of-interest-md-web.jpg",
+        "description": "A Nazi commandant and his family live an idyllic life next to Auschwitz, ignoring the horrors nearby in this chilling study of complicity."
+    },
+    {
+        "id": 63,
+        "title": "Kneecap",
+        "releaseYear": 2024,
+        "genre": "Drama, Comedy, Music",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BY2ZjODVmNTItOTY1YS00NjRmLTgzNDMtZWE2NDM2NzIyN2M5XkEyXkFqcGc@._V1_.jpg",
+        "description": "A Belfast rap trio rises to fame with their provocative Irish-language music, blending rebellion and humor in a vibrant, semi-autobiographical drama."
+    },
+    {
+        "id": 64,
+        "title": "The Beekeeper",
+        "releaseYear": 2024,
+        "genre": "Action, Thriller",
+        "posterUrl": "https://i.ebayimg.com/images/g/p7UAAOSw2oBlM-61/s-l1200.jpg",
+        "description": "A former operative, Adam Clay, unleashes a deadly vendetta against a phishing scam syndicate, uncovering a larger conspiracy in this gritty action flick."
+    },
+    {
+        "id": 65,
+        "title": "The Book of Clarence",
+        "releaseYear": 2024,
+        "genre": "Comedy, Drama, Adventure",
+        "posterUrl": "https://www.sonypictures.ca/sites/canada/files/2024-02/DP_8866065_BOOKOFCLARENCE%2CTHE_2000x3000LSR_HEKeyArt_1333x2000_thumbnail-min.jpg",
+        "description": "A streetwise man in biblical Jerusalem mimics Jesus to gain wealth and power, only to find redemption in this irreverent, soulful satire."
+    },
+    {
+        "id": 66,
+        "title": "Mean Girls",
+        "releaseYear": 2024,
+        "genre": "Comedy, Musical",
+        "posterUrl": "https://i.ebayimg.com/images/g/qSwAAOSwDuNln9Tt/s-l1200.jpg",
+        "description": "A modern musical remake of the 2004 classic, where new student Cady Heron navigates high school cliques and the scheming Plastics."
+    },
+    {
+        "id": 67,
+        "title": "Night Swim",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMDIyNThiMjgtMTgwYS00YzU1LTkwZDMtODFkMzg0MzVjZGMwXkEyXkFqcGc@._V1_.jpg",
+        "description": "A family moves into a house with a haunted pool, facing terrifying supernatural forces in this eerie horror debut."
+    },
+    {
+        "id": 68,
+        "title": "Lisa Frankenstein",
+        "releaseYear": 2024,
+        "genre": "Horror, Comedy, Romance",
+        "posterUrl": "https://m.media-amazon.com/images/I/613DOQ9S5QL._UF894,1000_QL80_.jpg",
+        "description": "A teenage girl reanimates a corpse as her ideal boyfriend, leading to a gory, comedic romance in this quirky horror-comedy."
+    },
+    {
+        "id": 69,
+        "title": "Argylle",
+        "releaseYear": 2024,
+        "genre": "Action, Comedy, Thriller",
+        "posterUrl": "https://www.movieartarena.com/imgs/argyllei.jpg",
+        "description": "A reclusive author’s spy novels eerily predict real espionage, pulling her into a globe-trotting adventure with a quirky agent."
+    },
+    {
+        "id": 70,
+        "title": "The Iron Claw",
+        "releaseYear": 2024,
+        "genre": "Drama, Biography, Sports",
+        "posterUrl": "https://i.ebayimg.com/images/g/fM4AAOSwK8NlU~-Y/s-l400.jpg",
+        "description": "The tragic true story of the Von Erich brothers, wrestling prodigies whose family legacy is marred by personal and professional turmoil."
+    },
+    {
+        "id": 71,
+        "title": "Poor Things",
+        "releaseYear": 2024,
+        "genre": "Sci-Fi, Comedy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/71j0SXKUc-L.jpg",
+        "description": "A woman brought back to life by a mad scientist embarks on a surreal journey of self-discovery and liberation in a steampunk world."
+    },
+    {
+        "id": 72,
+        "title": "Barbie",
+        "releaseYear": 2024,
+        "genre": "Comedy, Fantasy, Drama",
+        "posterUrl": "https://i.ebayimg.com/images/g/Cd0AAOSwocdkoDER/s-l1200.jpg",
+        "description": "Barbie leaves her perfect plastic world to confront real-world challenges, finding empowerment and humanity in a vibrant, satirical adventure."
+    },
+    {
+        "id": 73,
+        "title": "Oppenheimer",
+        "releaseYear": 2024,
+        "genre": "Drama, Biography, Historical",
+        "posterUrl": "https://m.media-amazon.com/images/I/71qu4p5bnDL._UF894,1000_QL80_.jpg",
+        "description": "J. Robert Oppenheimer leads the Manhattan Project to build the atomic bomb, grappling with its moral and global consequences."
+    },
+    {
+        "id": 74,
+        "title": "Killers of the Flower Moon",
+        "releaseYear": 2024,
+        "genre": "Drama, Crime, Historical",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BZWY5ZDVjNTUtODI5Yy00MjFhLWEyM2EtYzZjM2VjZTI0MTBjXkEyXkFqcGc@._V1_.jpg",
+        "description": "A string of murders in 1920s Oklahoma targets Osage Nation members for their oil wealth, prompting an FBI investigation."
+    },
+    {
+        "id": 75,
+        "title": "The Color Purple",
+        "releaseYear": 2024,
+        "genre": "Drama, Musical",
+        "posterUrl": "https://i.ebayimg.com/images/g/Q~0AAOSwB0FlJhZy/s-l400.jpg",
+        "description": "A musical adaptation of Celie’s journey from abuse to empowerment in rural Georgia, celebrating resilience and sisterhood."
+    },
+    {
+        "id": 76,
+        "title": "Wonka",
+        "releaseYear": 2024,
+        "genre": "Fantasy, Comedy, Family",
+        "posterUrl": "https://m.media-amazon.com/images/I/81pJrYzRIOL.jpg",
+        "description": "Young Willy Wonka’s origin story, as he builds his chocolate empire with whimsical inventions and dreams of greatness."
+    },
+    {
+        "id": 77,
+        "title": "Aquaman and the Lost Kingdom",
+        "releaseYear": 2024,
+        "genre": "Action, Fantasy, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BYjQ1ZTUzMWMtY2VkNS00ZDRjLWEwODYtYmFkMWJiNTQxMDUzXkEyXkFqcGc@._V1_.jpg",
+        "description": "Arthur Curry teams up with his brother to stop Black Manta’s plan to destroy Atlantis and the world with ancient dark forces."
+    },
+    {
+        "id": 78,
+        "title": "The Marvels",
+        "releaseYear": 2024,
+        "genre": "Action, Sci-Fi, Superhero",
+        "posterUrl": "https://i.ebayimg.com/images/g/W~AAAOSwz3plTBZT/s-l1200.jpg",
+        "description": "Captain Marvel, Ms. Marvel, and Monica Rambeau swap powers and team up to save the universe from a cosmic threat."
+    },
+    {
+        "id": 79,
+        "title": "Guardians of the Galaxy Vol. 3",
+        "releaseYear": 2024,
+        "genre": "Action, Sci-Fi, Comedy",
+        "posterUrl": "https://i.ebayimg.com/images/g/2xoAAOSwi3lkb2Ud/s-l1200.jpg",
+        "description": "The Guardians embark on a mission to save Rocket’s life, confronting their pasts and a dangerous new enemy."
+    },
+    {
+        "id": 80,
+        "title": "Spider-Man: Across the Spider-Verse",
+        "releaseYear": 2024,
+        "genre": "Animation, Action, Adventure",
+        "posterUrl": "https://i.ebayimg.com/images/g/q8QAAOSwbpNkSfez/s-l1200.jpg",
+        "description": "Miles Morales swings through the multiverse, teaming with Spider-People to battle a new threat to all realities."
+    },
+    {
+        "id": 81,
+        "title": "The Super Mario Bros. Movie",
+        "releaseYear": 2024,
+        "genre": "Animation, Adventure, Comedy",
+        "posterUrl": "https://m.media-amazon.com/images/I/91zqGNzwk5L._UF894,1000_QL80_.jpg",
+        "description": "Mario and Luigi journey through the Mushroom Kingdom to rescue Princess Peach from Bowser in a vibrant animated adventure."
+    },
+    {
+        "id": 82,
+        "title": "Elemental",
+        "releaseYear": 2024,
+        "genre": "Animation, Romance, Comedy",
+        "posterUrl": "https://m.media-amazon.com/images/I/71A4X5bc1gL.jpg",
+        "description": "In a city of fire, water, earth, and air elements, Ember and Wade form an unlikely bond that challenges societal divides."
+    },
+    {
+        "id": 83,
+        "title": "Indiana Jones and the Dial of Destiny",
+        "releaseYear": 2024,
+        "genre": "Action, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/I/71QljrdqSKL.jpg",
+        "description": "Aging archaeologist Indiana Jones races to retrieve a time-altering artifact, facing old enemies and new challenges."
+    },
+    {
+        "id": 84,
+        "title": "Mission: Impossible – Dead Reckoning Part One",
+        "releaseYear": 2024,
+        "genre": "Action, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/I/71mSHZp4xML._UF894,1000_QL80_.jpg",
+        "description": "Ethan Hunt battles a rogue AI threatening global security, racing across continents in high-stakes espionage."
+    },
+    {
+        "id": 85,
+        "title": "Transformers: Rise of the Beasts",
+        "releaseYear": 2024,
+        "genre": "Action, Sci-Fi, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/I/711MPxWXaSL.jpg",
+        "description": "Autobots and Maximals team up in 1990s Earth to stop a planet-devouring threat, introducing new robotic allies."
+    },
+    {
+        "id": 86,
+        "title": "The Flash",
+        "releaseYear": 2024,
+        "genre": "Action, Sci-Fi, Superhero",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDgw/z/VswAAOSwcbNkSTHC/$_57.JPG?set_id=880000500F",
+        "description": "Barry Allen uses his speed to alter the past, creating a multiverse crisis with alternate heroes and villains."
+    },
+    {
+        "id": 87,
+        "title": "Blue Beetle",
+        "releaseYear": 2024,
+        "genre": "Action, Sci-Fi, Superhero",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDc5/z/9-YAAOSwlSRkisTJ/$_57.JPG?set_id=880000500F",
+        "description": "Teen Jaime Reyes bonds with an alien scarab, becoming a superhero to protect his family and city from evil forces."
+    },
+    {
+        "id": 88,
+        "title": "Fast X",
+        "releaseYear": 2024,
+        "genre": "Action, Crime, Thriller",
+        "posterUrl": "https://i.ebayimg.com/images/g/9fEAAOSwcH1kJMhW/s-l1200.jpg",
+        "description": "Dom Toretto faces a vengeful enemy from his past, endangering his family in a high-octane global showdown."
+    },
+    {
+        "id": 89,
+        "title": "The Little Mermaid",
+        "releaseYear": 2024,
+        "genre": "Fantasy, Musical, Romance",
+        "posterUrl": "https://m.media-amazon.com/images/I/712+XUUvIqL._UF894,1000_QL80_.jpg",
+        "description": "Ariel, a curious mermaid, trades her voice for legs to explore the human world and win Prince Eric’s love."
+    },
+    {
+        "id": 90,
+        "title": "The Fantastic Four: First Steps",
+        "releaseYear": 2025,
+        "genre": "Action, Sci-Fi, Superhero",
+        "posterUrl": "https://i.ebayimg.com/images/g/8ToAAOSw95poUt0k/s-l1200.jpg",
+        "description": "Marvel’s first family ventures into the Quantum Realm, facing cosmic threats in a retro-futuristic superhero epic."
+    },
+    {
+        "id": 91,
+        "title": "Thunderbolts*",
+        "releaseYear": 2025,
+        "genre": "Action, Sci-Fi, Superhero",
+        "posterUrl": "https://m.media-amazon.com/images/I/71Y2ZfgT+4L.jpg",
+        "description": "A team of Marvel antiheroes, including Yelena Belova and Red Guardian, takes on a covert mission with explosive consequences."
+    },
+    {
+        "id": 92,
+        "title": "Jurassic World: Rebirth",
+        "releaseYear": 2025,
+        "genre": "Action, Sci-Fi, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMDE1N2EzMjAtMDY1My00YWE5LWEyYjYtYmE3YjZjNzQwNDhmXkEyXkFqcGc@._V1_.jpg",
+        "description": "A team extracts DNA from ancient creatures to create life-saving drugs, but their mission unleashes prehistoric chaos."
+    },
+    {
+        "id": 93,
+        "title": "Avatar: Fire and Ash",
+        "releaseYear": 2025,
+        "genre": "Sci-Fi, Action, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BZDY0MDA5ZWUtZWZjYS00ZDBkLWI0NGEtZDc2YzE3NDBkZmZkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Jake Sully and Neytiri face the Ash People, a fiery Na’vi clan, in a visually stunning continuation of Pandora’s saga."
+    },
+    {
+        "id": 94,
+        "title": "Ballerina",
+        "releaseYear": 2025,
+        "genre": "Action, Thriller",
+        "posterUrl": "https://i.ebayimg.com/images/g/kVMAAOSwv8xoSk70/s-l1200.jpg",
+        "description": "A young assassin, trained in the John Wick universe, seeks vengeance in a stylish, action-packed spinoff."
+    },
+    {
+        "id": 95,
+        "title": "Elio",
+        "releaseYear": 2025,
+        "genre": "Animation, Sci-Fi, Comedy",
+        "posterUrl": "https://i.ebayimg.com/images/g/9HQAAOSwp2NknR8C/s-l1200.jpg",
+        "description": "A young boy is mistaken for Earth’s ambassador, embarking on a cosmic adventure with aliens in Pixar’s heartfelt tale."
+    },
+    {
+        "id": 96,
+        "title": "Zootopia 2",
+        "releaseYear": 2025,
+        "genre": "Animation, Comedy, Adventure",
+        "posterUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Zootopia_2_%282025_film%29.jpg/250px-Zootopia_2_%282025_film%29.jpg",
+        "description": "Judy Hopps and Nick Wilde go undercover to catch a mysterious reptile disrupting Zootopia, in a fun animated sequel."
+    },
+    {
+        "id": 97,
+        "title": "Wicked: Part Two",
+        "releaseYear": 2025,
+        "genre": "Musical, Fantasy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BYTI3MGM3ZDItMjI2My00NGQxLWEzMWMtNzQ1NGQ1ZWU5ODU2XkEyXkFqcGc@._V1_.jpg",
+        "description": "Elphaba embraces her destiny as the Wicked Witch, while Glinda rises as the Good Witch, concluding the Oz musical."
+    },
+    {
+        "id": 98,
+        "title": "The Bad Guys 2",
+        "releaseYear": 2025,
+        "genre": "Animation, Comedy, Crime",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BY2YwODhmODctMjE2OS00Y2EyLWEyZTEtOGU3ODk5MGIzYmU1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "The reformed Bad Guys face an all-female crime squad, pulling them back into action for one last heist."
+    },
+    {
+        "id": 99,
+        "title": "The Naked Gun",
+        "releaseYear": 2025,
+        "genre": "Comedy, Crime",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BNGFlNDhkNzItZjgxNC00OGYzLWFjZDAtZTJmNDY5ZmEyZDc0XkEyXkFqcGc@._V1_.jpg",
+        "description": "Frank Drebin’s bumbling legacy continues with Liam Neeson as a new detective in this slapstick comedy reboot."
+    },
+    {
+        "id": 100,
+        "title": "Freakier Friday",
+        "releaseYear": 2025,
+        "genre": "Comedy, Fantasy",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BY2Q0M2NmMjctODEwMi00NGIyLTk4NjUtMzBlNDAxYTZlZGJiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Tess and Anna swap bodies again, now with new family members, in a chaotic sequel to the 2003 comedy."
+    },
+    {
+        "id": 101,
+        "title": "This Is Spinal Tap 2",
+        "releaseYear": 2025,
+        "genre": "Comedy, Music",
+        "posterUrl": "https://lh4.googleusercontent.com/proxy/OsLrHKpbPgZE4g8GdsUgLAwju41NJVGvOHMQ3bY_OX7VDezpvLuqIi-Ba4mqjCo5udDsThtVa5xXX1XyultWgqKvzzpaAlXvkYxbvvFLWc9cvlMqQPeQQtU",
+        "description": "The mockumentary band reunites for a final concert, delivering absurd humor and rock nostalgia 15 years later."
+    },
+    {
+        "id": 102,
+        "title": "Downton Abbey 3",
+        "releaseYear": 2025,
+        "genre": "Drama, Historical",
+        "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUZ2wh5_FmSh-C8uVTTEUDY_sgAVPuLhrEbQ&s",
+        "description": "The Crawley family navigates life after the Dowager Countess’s death, blending drama and period elegance."
+    },
+    {
+        "id": 103,
+        "title": "A Simple Favor 2",
+        "releaseYear": 2025,
+        "genre": "Thriller, Comedy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMDBhNTg1MWMtMDc5Ni00YTk1LWFjNGUtMmE2Y2Q5MGQ2M2Q2XkEyXkFqcGc@._V1_.jpg",
+        "description": "Stephanie and Emily scheme in a glamorous Italian setting, unraveling new mysteries in this stylish thriller sequel."
+    },
+    {
+        "id": 104,
+        "title": "Wolf Man",
+        "releaseYear": 2025,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTI4OTVlZGItNjAzNi00OTg2LWI4MTAtOTZhMDNhY2UwOGVhXkEyXkFqcGc@._V1_.jpg",
+        "description": "A man transforms into a werewolf, fighting to protect his family from his curse in a modern horror reboot."
+    },
+    {
+        "id": 105,
+        "title": "Back in Action",
+        "releaseYear": 2025,
+        "genre": "Action, Comedy",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMWQ4YWYxYTAtZTlhNC00Nzc3LWE3OWUtZjY5MThlNWNiYTBiXkEyXkFqcGc@._V1_.jpg",
+        "description": "Retired CIA agents, played by Jamie Foxx and Cameron Diaz, return for a high-stakes mission in this Netflix action-comedy."
+    },
+    {
+        "id": 106,
+        "title": "You’re Cordially Invited",
+        "releaseYear": 2025,
+        "genre": "Comedy, Romance",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMGM3MzQwMWItNjM2Ny00NTkwLThkZWMtZmNiYTlhMGZlN2JhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Two families clash over a double-booked wedding venue, sparking hilarious chaos in this Prime Video comedy."
+    },
+    {
+        "id": 107,
+        "title": "Tron: Ares",
+        "releaseYear": 2025,
+        "genre": "Sci-Fi, Action",
+        "posterUrl": "https://i.ebayimg.com/images/g/kJkAAOSwQPJn9TVf/s-l1200.jpg",
+        "description": "A rogue AI enters the real world, forcing a programmer to navigate the Grid in a visually dazzling sequel."
+    },
+    {
+        "id": 108,
+        "title": "KPop Demon Hunters",
+        "releaseYear": 2025,
+        "genre": "Animation, Action, Fantasy",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BNTBiYWJlMjQtOTIyMy00NTY4LWFhOWItOWZhNzc3NGMyMjc2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A K-pop girl group secretly battles demons, balancing stardom and supernatural action in an animated adventure."
+    },
+    {
+        "id": 109,
+        "title": "Superman",
+        "releaseYear": 2025,
+        "genre": "Action, Sci-Fi, Superhero",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BOGMwZGJiM2EtMzEwZC00YTYzLWIxNzYtMmJmZWNlZjgxZTMwXkEyXkFqcGc@._V1_.jpg",
+        "description": "Clark Kent balances his Kryptonian heritage and human life, facing new threats in James Gunn’s DC reboot."
+    },
+    {
+        "id": 110,
+        "title": "On Becoming a Guinea Fowl",
+        "releaseYear": 2025,
+        "genre": "Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMWU4ODUyOWYtMDdjOC00NzA1LWJmNDQtYjcxMWE1NDA3MGE2XkEyXkFqcGc@._V1_.jpg",
+        "description": "Shula discovers her uncle’s body, unraveling family secrets in a Zambian drama about grief and social mores."
+    },
+    {
+        "id": 111,
+        "title": "Eephus",
+        "releaseYear": 2025,
+        "genre": "Drama, Sports",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BZjdkNjQ3ODctMmM4ZS00NDM3LTg2ZWYtZTIwNDZhZTMyOTFlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A small-town baseball team plays its final game before their field is demolished, in a bittersweet sports drama."
+    },
+    {
+        "id": 112,
+        "title": "Drop",
+        "releaseYear": 2025,
+        "genre": "Thriller, Drama",
+        "posterUrl": "https://universalpictures.ca/wp-content/uploads/2025/01/universal-poster-template-430x663-3.jpg",
+        "description": "A widowed mother faces danger on a first date, using modern tech to survive in a Hitchcockian thriller."
+    },
+    {
+        "id": 113,
+        "title": "The Assessment",
+        "releaseYear": 2025,
+        "genre": "Sci-Fi, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BOWFjMGIwNDgtODE5MS00ZWVkLTlhNzgtMDI1ZDM1OWMyYzY4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A couple undergoes a futuristic parenting evaluation, probing human nature in a thought-provoking sci-fi drama."
+    },
+    {
+        "id": 114,
+        "title": "Nonnas",
+        "releaseYear": 2025,
+        "genre": "Comedy, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BODM0M2M4YWQtMzhlNy00NjdkLWFkODktOGNlNTc4OTFiZjZmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A man opens an Italian restaurant to honor his late mother, finding comfort and chaos in this warm comedy."
+    },
+    {
+        "id": 115,
+        "title": "Unicorns",
+        "releaseYear": 2025,
+        "genre": "Drama, Romance",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BYTMyYWZjMjgtZDdlYS00MzMzLTlhMjMtNmU4ZGNiOWE1NTJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A queer love story between a mechanic and a drag performer, navigating identity with sincerity and heart."
+    },
+    {
+        "id": 116,
+        "title": "The Final Reckoning",
+        "releaseYear": 2025,
+        "genre": "Action, Thriller",
+        "posterUrl": "https://lh3.googleusercontent.com/proxy/GYEHikbchS1WZ9UuuTeruWIA6prD1EVEb5UuTC49yoVln0k-FuNwnkmxA85JfxCqN4DT4ob4dvqVC65g-qML4q-_g-AN4nfWFLriIOOXc0j0C_1nN1VTxkCp_fbMSNyQEUkR91FmUv6kwQ",
+        "description": "Ethan Hunt’s last mission pits him against a global threat, with breathtaking stunts in this Mission: Impossible finale."
+    },
+    {
+        "id": 117,
+        "title": "Grand Theft Hamlet",
+        "releaseYear": 2024,
+        "genre": "Documentary, Comedy",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BYTFmY2E0YzQtZTlmMC00NmNjLTg1MjUtY2NmNmZlNDgyMzM5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Two actors stage Hamlet inside the video game Grand Theft Auto, blending documentary and absurdity."
+    },
+    {
+        "id": 118,
+        "title": "Scala!!!",
+        "releaseYear": 2024,
+        "genre": "Documentary",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMjdmZWE0MWQtYzE0Mi00MjdhLWI0M2EtNWIwZWQ4N2RiMGUxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A documentary celebrating London’s iconic Scala cinema, known for its eclectic, rebellious film screenings."
+    },
+    {
+        "id": 119,
+        "title": "Priscilla",
+        "releaseYear": 2024,
+        "genre": "Drama, Biography, Romance",
+        "posterUrl": "https://images.squarespace-cdn.com/content/v1/639088d58937405bffae13ad/1704390781469-0IY9JYQF20J6JHN2FGFW/Priscilla+Movie+Poster.jpg?format=1000w",
+        "description": "Sofia Coppola’s take on Priscilla Presley’s life with Elvis, exploring love and isolation in a dreamy biopic."
+    },
+    {
+        "id": 120,
+        "title": "The Seed of the Sacred Fig",
+        "releaseYear": 2024,
+        "genre": "Drama, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMmYxMTlmODQtZTUyOS00YWE3LWFjYTktOWU4ZjU3ZGYwZDk2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "An Iranian family unravels as a father’s role in the Revolutionary Guard clashes with the Woman, Life, Freedom protests."
+    },
+    {
+        "id": 121,
+        "title": "I’m Still Here",
+        "releaseYear": 2024,
+        "genre": "Drama, Historical",
+        "posterUrl": "https://i.ebayimg.com/images/g/fWoAAOSwf6VnkplH/s-l1200.jpg",
+        "description": "A Brazilian family resists a military dictatorship in the 1970s, focusing on a mother’s resilience and loss."
+    },
+    {
+        "id": 122,
+        "title": "All of Us Strangers",
+        "releaseYear": 2024,
+        "genre": "Drama, Fantasy, Romance",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BZDU2ZjBlOTUtMTIzMC00OWI0LTg2OTAtZmUxYTE2MzdhNzZlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A screenwriter forms a ghostly bond with his parents and a neighbor, blending love and grief in a haunting drama."
+    },
+    {
+        "id": 123,
+        "title": "Perfect Days",
+        "releaseYear": 2024,
+        "genre": "Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BNGVmODFkM2MtOTEzMy00MjFjLThjZmYtODMxZmI1MzcyNDkyXkEyXkFqcGc@._V1_.jpg",
+        "description": "A Tokyo janitor finds joy in life’s simple routines, offering a meditative look at contentment and beauty."
+    },
+    {
+        "id": 124,
+        "title": "Anatomy of a Fall",
+        "releaseYear": 2024,
+        "genre": "Drama, Thriller, Mystery",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDkw/z/BCIAAOSwZQRlr91Q/$_57.JPG?set_id=880000500F",
+        "description": "A writer is tried for her husband’s murder, with their blind son as the key witness in a gripping courtroom drama."
+    },
+    {
+        "id": 125,
+        "title": "The Holdovers",
+        "releaseYear": 2024,
+        "genre": "Drama, Comedy",
+        "posterUrl": "https://i.ebayimg.com/images/g/9yMAAOSwgkZlr98v/s-l1200.jpg",
+        "description": "A grumpy teacher, a troubled student, and a cook bond over a snowy Christmas at a 1970s boarding school."
+    },
+    {
+        "id": 126,
+        "title": "Past Lives",
+        "releaseYear": 2024,
+        "genre": "Drama, Romance",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BYjQyMTNhNjUtN2VmYy00NWRhLTkwOTctMGVmNTBmNDIxYjZhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Two childhood friends reconnect in New York, reflecting on love, identity, and missed opportunities over decades."
+    },
+    {
+        "id": 127,
+        "title": "Society of the Snow",
+        "releaseYear": 2024,
+        "genre": "Drama, Thriller, Historical",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BODM1MWQ1MWUtMDM1ZS00ZjI3LTg4ZTMtNmI1ZDAwNmE4MTNiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Survivors of a 1972 Andes plane crash fight to stay alive, based on the true story of resilience and sacrifice."
+    },
+    {
+        "id": 128,
+        "title": "The Boy and the Heron",
+        "releaseYear": 2024,
+        "genre": "Animation, Fantasy, Drama",
+        "posterUrl": "https://i.ebayimg.com/images/g/HgcAAOSweoxlLvPC/s-l1200.jpg",
+        "description": "A boy processes grief through a fantastical world, in Hayao Miyazaki’s visually stunning animated masterpiece."
+    },
+    {
+        "id": 129,
+        "title": "Godzilla Minus One",
+        "releaseYear": 2024,
+        "genre": "Sci-Fi, Action, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/81poz6t+a2L.jpg",
+        "description": "A post-WWII Japan faces a destructive Godzilla, with a former kamikaze pilot seeking redemption."
+    },
+    {
+        "id": 130,
+        "title": "Civil War",
+        "releaseYear": 2024,
+        "genre": "Action, Drama, Thriller",
+        "posterUrl": "https://media-cache.cinematerial.com/p/500x/zxiaiqla/civil-war-movie-poster.jpg?v=1716996459",
+        "description": "Journalists navigate a fractured, war-torn America to report on a collapsing government in a dystopian thriller."
+    },
+    {
+        "id": 131,
+        "title": "Challengers",
+        "releaseYear": 2024,
+        "genre": "Drama, Romance, Sports",
+        "posterUrl": "https://i.ebayimg.com/images/g/HzQAAOSwr4VlumpN/s-l1200.jpg",
+        "description": "A tennis prodigy’s love triangle with two players unfolds, blending romance and rivalry on and off the court."
+    },
+    {
+        "id": 132,
+        "title": "Kingdom of the Planet of the Apes",
+        "releaseYear": 2024,
+        "genre": "Sci-Fi, Action, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/I/81PqziEQvBL._UF894,1000_QL80_.jpg",
+        "description": "A young ape challenges a tyrannical leader in a new era, rebuilding society in a post-human world."
+    },
+    {
+        "id": 133,
+        "title": "Twisters",
+        "releaseYear": 2024,
+        "genre": "Action, Thriller, Drama",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDEw/z/DVUAAOSwTURlynut/$_57.JPG?set_id=880000500F",
+        "description": "Storm chasers test cutting-edge tech against massive tornadoes, facing personal and professional stakes."
+    },
+    {
+        "id": 134,
+        "title": "Despicable Me 4",
+        "releaseYear": 2024,
+        "genre": "Animation, Comedy, Family",
+        "posterUrl": "https://i.ebayimg.com/images/g/u14AAOSw4bRmRG2Z/s-l1200.jpg",
+        "description": "Gru faces a new villain, Maxime Le Mal, while his family adjusts to a new baby and chaotic Minion antics."
+    },
+    {
+        "id": 135,
+        "title": "Ghostbusters: Frozen Empire",
+        "releaseYear": 2024,
+        "genre": "Comedy, Fantasy, Adventure",
+        "posterUrl": "https://i.ebayimg.com/images/g/XqkAAOSwITxl17Uc/s-l400.jpg",
+        "description": "The Ghostbusters battle an ancient evil unleashing a supernatural ice age in New York City."
+    },
+    {
+        "id": 136,
+        "title": "Kung Fu Panda 4",
+        "releaseYear": 2024,
+        "genre": "Animation, Action, Comedy",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTM0Nlg5MDA=/z/K3cAAOSw1N5lf5eq/$_57.JPG?set_id=880000500F",
+        "description": "Po trains a new Dragon Warrior while facing a shape-shifting sorceress threatening the Valley of Peace."
+    },
+    {
+        "id": 137,
+        "title": "Rebel Moon – Part One: A Child of Fire",
+        "releaseYear": 2024,
+        "genre": "Sci-Fi, Action, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BYTRmOTk2ZDYtY2Q3Mi00MGYwLWFjNDQtYTliODc3NzM1ZjBlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "A warrior recruits fighters to defend a peaceful planet from a galactic tyrant in Zack Snyder’s sci-fi epic."
+    },
+    {
+        "id": 138,
+        "title": "Rebel Moon – Part Two: The Scargiver",
+        "releaseYear": 2024,
+        "genre": "Sci-Fi, Action, Drama",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BOGYzMDQ1ZWItNjMyYi00ZjM4LWE5YTctYTJhNTYxZDI4OTU0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "The rebels prepare for a final stand against the Motherworld’s forces in the conclusion of Snyder’s saga."
+    },
+    {
+        "id": 139,
+        "title": "Immaculate",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://i.ebayimg.com/00/s/MTYwMFgxMDgw/z/fMUAAOSwwzpmG046/$_57.JPG?set_id=880000500F",
+        "description": "A nun discovers dark secrets in an Italian convent, facing supernatural horror in this unsettling thriller."
+    },
+    {
+        "id": 140,
+        "title": "The First Omen",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://i.ebayimg.com/images/g/t9UAAOSwKnNl8hsV/s-l400.jpg",
+        "description": "A young American uncovers a sinister conspiracy in Rome, tied to the birth of evil in this Omen prequel."
+    },
+    {
+        "id": 141,
+        "title": "Abigail",
+        "releaseYear": 2024,
+        "genre": "Horror, Comedy, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/I/61-yUCpcPWL._UF894,1000_QL80_.jpg",
+        "description": "Criminals kidnap a young girl who turns out to be a vampire, leading to a bloody, comedic horror showdown."
+    },
+    {
+        "id": 142,
+        "title": "Speak No Evil",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://image.tmdb.org/t/p/original/yyNhJhA05GY9HDcvcgCF56k5ZqD.jpg",
+        "description": "A family vacation turns sinister when their hosts reveal unsettling intentions in this tense psychological horror remake."
+    },
+    {
+        "id": 143,
+        "title": "Heretic",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BMzFiMWM4YjAtY2Y3Yi00MDIzLTk0N2MtYTAwNGM3ZmMwODhlXkEyXkFqcGc@._V1_.jpg",
+        "description": "Two missionaries encounter a dangerous man whose theological games turn deadly in this chilling horror."
+    },
+    {
+        "id": 144,
+        "title": "Smile 2",
+        "releaseYear": 2024,
+        "genre": "Horror, Thriller",
+        "posterUrl": "https://m.media-amazon.com/images/I/81vdxdwqS8L.jpg",
+        "description": "A pop star is plagued by a malevolent curse that spreads through smiles, escalating into terrifying chaos."
+    },
+    {
+        "id": 145,
+        "title": "Terrifier 3",
+        "releaseYear": 2024,
+        "genre": "Horror, Slasher",
+        "posterUrl": "https://m.media-amazon.com/images/M/MV5BNzc2MWUyYzctY2E4Ny00ZTlmLThjNTMtMTViZGI5NjcyN2EzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "description": "Art the Clown returns to terrorize a small town at Christmas, delivering gory mayhem in this slasher sequel."
+    },
+    {
+        "id": 146,
+        "title": "Nosferatu",
+        "releaseYear": 2024,
+        "genre": "Horror, Drama, Fantasy",
+        "posterUrl": "https://i.redd.it/xvpevrhx0spd1.jpeg",
+        "description": "A reimagining of the silent vampire classic, where a young woman’s obsession with a gothic count unleashes horror."
+    },
+    {
+        "id": 147,
+        "title": "Babygirl",
+        "releaseYear": 2024,
+        "genre": "Thriller, Drama, Romance",
+        "posterUrl": "https://media-cache.cinematerial.com/p/500x/khnzpfm6/babygirl-movie-poster.jpg?v=1737051503",
+        "description": "A CEO risks her career and family for a passionate affair with her younger intern, in a steamy erotic thriller."
+    },
+    {
+        "id": 148,
+        "title": "The Wild Robot",
+        "releaseYear": 2024,
+        "genre": "Animation, Adventure, Drama",
+        "posterUrl": "https://i.ebayimg.com/images/g/3pwAAOSwCblmtEWb/s-l1200.jpg",
+        "description": "A robot stranded on an island befriends animals, adapting to protect them in a heartfelt animated adventure."
+    },
+    {
+        "id": 149,
+        "title": "Mufasa: The Lion King",
+        "releaseYear": 2024,
+        "genre": "Animation, Drama, Adventure",
+        "posterUrl": "https://m.media-amazon.com/images/I/91Gr677eSeL.jpg",
+        "description": "The origin story of Mufasa, Simba’s father, explores his rise to king and rivalry with his brother Scar."
+    }
+]
