@@ -68,9 +68,7 @@ export const Movie = ({ movie }: IMovieProps) => {
           </div>
 
           </div>
-          <div className="movie-description">{movie.description}</div>
-        </div>
-      </div>
+   
     </>
   );
 };

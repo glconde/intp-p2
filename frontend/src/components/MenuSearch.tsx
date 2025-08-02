@@ -1,13 +1,17 @@
 
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import { allMovies } from '@/services/services'
 import { IMovie } from '@/services/types'
 import { MovieSearch } from './Movie'
 import { Search, X} from 'lucide-react'
 
+const MenuSearch = () => {
+    const [movies, setMovies] = useState<IMovie[]>([])
+    const [search, setSearch] = useState<boolean>(false)
+    const [searchresults, setSearchresults] = useState<IMovie[] | null>(null)
 
-  useEffect(() => {
+     useEffect(() => {
     allMovies.then((m) => {
       if (m.length && "error" in m[0]) {
         console.error((m[0] as { error: string }).error);
@@ -18,15 +22,7 @@ import { Search, X} from 'lucide-react'
     });
   }, []);
 
-
-const MenuSearch = () => {
-    const [movies, setMovies] = useState<IMovie[]>([])
-    const [search, setSearch] = useState<boolean>(false)
-    const [searchresults, setSearchresults] = useState<IMovie[] | null>(null)
-    useEffect(()=>{
-        allMovies.then((m) => setMovies(m))
-    })
-    const handleSearch = (e: { target: { value: string } }) => {
+    const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
         if(e.target.value.length >= 2 && e.target.value != ''){
         const results = movies && movies.filter((item:IMovie) => item.title.toLowerCase().includes(e.target.value.toLowerCase()));
         setSearchresults(results);
@@ -35,7 +31,7 @@ const MenuSearch = () => {
         }
 
     }
-  };
+
 
     const handleClose = () => {
         setSearch(false);

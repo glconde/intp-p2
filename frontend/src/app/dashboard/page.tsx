@@ -8,7 +8,8 @@ import { IMovie } from '@/services/types'
 import AddMovieForm from '@/components/AddMovieForm'
 import FormModal from '@/components/FormModal'
 import { useAuth } from '@/services/AuthContext'
- import { allMovies } from '@/services/services'
+import { allMovies } from '@/services/services'
+
 const Page = () => {
     const [movies, setMovies] = useState<IMovie[] | null>(null)
    const [results, setResults] = useState<IMovie[] | null>(null)
@@ -22,12 +23,13 @@ const Page = () => {
         getMovies()
     },[user, router])
 
-    const getMovies = async () => {
+    
+
+
+  const getMovies = async () => {
         allMovies.then((m)=>setMovies(m));
 
     }
-  };
-
 
     const deleteMovie = async (id:number) => {
         const con = confirm('Are you sure you want to delete?');
@@ -44,12 +46,10 @@ const Page = () => {
         }catch(error){
             alert('Error+'+error);
         }
-      } catch (error) {
-        alert("Error+" + error);
+      
       }
     }
 
-    }
 
     const handleSearch = async (e: ChangeEvent<HTMLInputElement>) => {
         const searchValue = e.target.value.trim(); 
