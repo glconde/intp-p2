@@ -24,7 +24,10 @@ const Page = () => {
 
     const getMovies = async () => {
         allMovies.then((m)=>setMovies(m));
+
     }
+  };
+
 
     const deleteMovie = async (id:number) => {
         const con = confirm('Are you sure you want to delete?');
@@ -41,7 +44,11 @@ const Page = () => {
         }catch(error){
             alert('Error+'+error);
         }
+      } catch (error) {
+        alert("Error+" + error);
+      }
     }
+
     }
 
     const handleSearch = async (e: ChangeEvent<HTMLInputElement>) => {
@@ -112,4 +119,5 @@ const Page = () => {
     )
 }
 
-export default Page
+
+export default Page;

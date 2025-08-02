@@ -10,23 +10,23 @@ interface IMovieType {
   genre: string;
   posterUrl: string;
   description: string;
-};
+}
 
 interface IMovieData {
-  Director:string;
-  Actors:string;
-  Writer:string;
-  Language:string;
-  Runtime:string;
-  BoxOffice:string;
-  Plot:string;
-  Awards:string;
-  Ratings:[];
+  Director: string;
+  Actors: string;
+  Writer: string;
+  Language: string;
+  Runtime: string;
+  BoxOffice: string;
+  Plot: string;
+  Awards: string;
+  Ratings: [];
 }
 
 interface IRating {
-  Source:string;
-  Value:string;
+  Source: string;
+  Value: string;
 }
 
 interface IMovieProps {
@@ -34,17 +34,18 @@ interface IMovieProps {
 }
 
 interface IModal {
-    data:IMovieType;
-    openModal: (value:boolean)=>void;
-    modal:boolean;
+  data: IMovieType;
+  openModal: (value: boolean) => void;
+  modal: boolean;
 }
 
-export const Movie = ({movie}:IMovieProps) => {
-    const [modal, setModal] = useState<boolean>(false)
+export const Movie = ({ movie }: IMovieProps) => {
+  const [modal, setModal] = useState<boolean>(false);
 
-    const handleDetails = () => {
-        setModal(!modal)
-    }
+  const handleDetails = () => {
+    setModal(!modal);
+  };
+
 
     return(
         <>
@@ -65,43 +66,53 @@ export const Movie = ({movie}:IMovieProps) => {
             <div className="movie-description">{movie.description}</div>
             
           </div>
-          </div>
-          </>
-    )
-}
 
-export const MovieSearch = ({movie}:IMovieProps) => {
-    const [modal, setModal] = useState<boolean>(false)
-
-    const handleDetails = () => {
-        setModal(!modal)
-    }
-
-    return(
-        <>
-        {modal && <Modal data={movie} openModal={setModal} modal={modal}/>}
-        <div
-            key={movie.id}
-            className="search-result" onClick={handleDetails}
-          >
-            
-            <div className="movie-poster-search">{movie.posterUrl ? <picture><img className="movie-img"
-              src={movie.posterUrl}
-              alt={movie.title}
-            /></picture> : <Popcorn size={60} color="#404040"/>}</div>
-            <div className="movie-content">
-            <div>{movie.title} </div>
-            <div className="movie-year">
-              <span>{movie.releaseYear} • {movie.genre}</span>
-              
-            </div>
-       <div className="movie-description">{movie.description}</div>
-            
           </div>
+          <div className="movie-description">{movie.description}</div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export const MovieSearch = ({ movie }: IMovieProps) => {
+  const [modal, setModal] = useState<boolean>(false);
+
+  const handleDetails = () => {
+    setModal(!modal);
+  };
+
+  return (
+    <>
+      {modal && <Modal data={movie} openModal={setModal} modal={modal} />}
+      <div key={movie.id} className="search-result" onClick={handleDetails}>
+        <div className="movie-poster-search">
+          {movie.posterUrl ? (
+            <picture>
+              <img
+                className="movie-img"
+                src={movie.posterUrl}
+                alt={movie.title}
+              />
+            </picture>
+          ) : (
+            <Popcorn size={60} color="#404040" />
+          )}
+        </div>
+        <div className="movie-content">
+          <div>{movie.title} </div>
+          <div className="movie-year">
+            <span>
+              {movie.releaseYear} • {movie.genre}
+            </span>
           </div>
-          </>
-    )
-}
+          <div className="movie-description">{movie.description}</div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 
 export const Modal = ({data, openModal, modal}:IModal) => {
   const [moviedata, setMoviedata] = useState<IMovieData | null>(null)
@@ -153,6 +164,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
                 <tr><td>Languages</td><td>{moviedata.Language}</td></tr>
                 <tr><td>Box Office</td><td>{moviedata.BoxOffice}</td></tr>
                 <tr><td>Plot</td><td>{moviedata.Plot}</td></tr>
+
               </tbody>
             </table>
               }
@@ -160,7 +172,10 @@ export const Modal = ({data, openModal, modal}:IModal) => {
             }
             </div>
             </div>
+
         </div>
+
         </>
     )
 }
+

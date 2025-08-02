@@ -5,17 +5,18 @@ import { IMovie } from "@/services/types";
 import { Loader } from "./Loader";
 import { PulseLoader } from "react-spinners";
 
-interface IMovieForm{
-    id:unknown;
-    getMovies:()=>void;
+interface IMovieForm {
+  id: number | null;
+  getMovies: () => void;
 }
+
 const AddMovieForm = ({id, getMovies}:IMovieForm) => {
     const [movie, setMovie] = useState<IMovie>()
     const [message, setMessage] = useState<string>('')
     const [update, setUpdate] = useState<boolean>(false)
     useEffect(()=>{
         if(id) getMovie();
-    })
+    },[id])
 
     const addMovie = async (e: ChangeEvent<HTMLFormElement>) => {
         setUpdate(true)
@@ -51,19 +52,34 @@ const AddMovieForm = ({id, getMovies}:IMovieForm) => {
         }catch(error){
             alert('Error'+error)
         }
+
     }
 
-    const getMovie = async () => {
-        try{
-            const response = await fetch(`${apiURL}/api/movies/${id}`);
-            if(response.ok){
-            const data = await response.json()
-            setMovie(data)
-            }
-        }catch(error){
-            alert('Error'+error)
-        }
+    try {
+      const endpoint = id ? `/${id}` : "";
+      const response = await fetch(`${apiURL}/api/movies${endpoint}`, {
+        method: id ? "PUT" : "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(obj),
+      });
+
+      if (response.ok) {
+        await response.json();
+        setMessage(
+          id ? "Movie updated successfully!" : "Movie added successfully!"
+        );
+        getMovies();
+        if (!id && formRef.current) formRef.current.reset();
+      } else {
+        setMessage("Error saving movie.");
+      }
+    } catch (error) {
+      setMessage("Error: " + error);
+    } finally {
+      setUpdate(false);
+      setTimeout(() => setMessage(""), 2000);
     }
+  };
 
 if(id){
     if(!movie) return <Loader/>
@@ -99,5 +115,6 @@ if(id){
         </>
     )
 }
+
 
 export default AddMovieForm;

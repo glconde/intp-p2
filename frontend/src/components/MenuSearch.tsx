@@ -1,9 +1,22 @@
+
 'use client'
 import { useState, useEffect } from 'react'
 import { allMovies } from '@/services/services'
 import { IMovie } from '@/services/types'
 import { MovieSearch } from './Movie'
 import { Search, X} from 'lucide-react'
+
+
+  useEffect(() => {
+    allMovies.then((m) => {
+      if (m.length && "error" in m[0]) {
+        console.error((m[0] as { error: string }).error);
+        setMovies([]);
+      } else {
+        setMovies(m as IMovie[]);
+      }
+    });
+  }, []);
 
 
 const MenuSearch = () => {
@@ -20,7 +33,9 @@ const MenuSearch = () => {
         }else{
             setSearchresults(null);
         }
+
     }
+  };
 
     const handleClose = () => {
         setSearch(false);
@@ -45,3 +60,4 @@ const MenuSearch = () => {
 }
 
 export default MenuSearch
+

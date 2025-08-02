@@ -1,10 +1,10 @@
 import { X } from "lucide-react";
 import { ReactNode } from "react";
 interface IFormModal {
-    children:ReactNode;
-    form:boolean;
-    setForm:(value:boolean)=>void
-    setId:(value:unknown)=>void
+  children: React.ReactNode;
+  form: boolean;
+  setForm: (value: boolean) => void;
+  setId: (value: number | null) => void;
 }
 
 const FormModal = ({children, form, setForm, setId}:IFormModal) => {
@@ -18,5 +18,6 @@ const FormModal = ({children, form, setForm, setId}:IFormModal) => {
     </>
     )
 }
+
 
 export default FormModal;

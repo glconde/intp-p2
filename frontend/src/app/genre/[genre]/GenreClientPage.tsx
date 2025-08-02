@@ -71,4 +71,6 @@ const GenreClientPage = () => {
   );
 };
 
+
 export default GenreClientPage;
+
