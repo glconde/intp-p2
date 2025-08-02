@@ -69,8 +69,10 @@ const Page = () => {
         </section>
         <section className="dashboard-section2"><div className="toggle-div" onClick={()=>setVisible(!isVisible)}>View Movies {!isVisible ? <ChevronDown size={20}/> :<ChevronUp size={20}/> }</div></section>
         { isVisible &&
-        <><div className="dashboard-search"><input type="search" placeholder="Search movies" onChange={handleSearch}/></div>
+        <>
+        <div className="dashboard-search"><input type="search" placeholder="Search movies" onChange={handleSearch}/></div>
         <section className="dashboard-section2">
+            {!movies ? <PulseLoader color="yellow"/> : 
             <table>
                 <thead>
                 <tr>
@@ -81,8 +83,8 @@ const Page = () => {
                 </tr>
                 </thead>
                 <tbody>
-            {!movies ? <PulseLoader color="yellow"/> : results ? 
-            results.map((movie, i)=>{
+            
+            { results ? results.map((movie, i)=>{
                 return <tr key={i}>
                     <td>{movie.title}</td>
                     <td>{movie.releaseYear}</td>
@@ -101,9 +103,12 @@ const Page = () => {
             })}
              </tbody>
             </table>
+        
+        }
         </section></>
         }
-        </>
+    </>
+    
     )
 }
 
