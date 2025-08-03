@@ -114,9 +114,9 @@ button img{
 }
 
 .filter-wrapper{
-  position:sticky;
-  top:80px;
-  z-index:4;
+  position:fixed;
+  bottom:30px;
+  z-index:5;
   display:flex;
   align-items: center;
   gap:5px;
@@ -133,9 +133,11 @@ button img{
 
 .filters{
   position:absolute;
-  top:105%;
+  bottom:105%;
   background-color:rgba(10,10,10,0.6);
   backdrop-filter: blur(20px);
+  border-radius:5px;
+  padding-block:5px;
 }
 
 .filter{
@@ -262,6 +264,8 @@ padding-inline:10px;
   padding:10px;
    background-color: #000000;
    z-index:4;
+   font-size:var(--small);
+   overflow:auto;
 }
 
 .section-title{
@@ -832,6 +836,10 @@ footer{
   .modal-content-section2{
     grid-template-columns: 1fr;
   }
+
+  .genre-wrapper{
+    justify-content: flex-start;
+  }
 }
 
 @media screen and (max-width: 530px){
@@ -863,6 +871,10 @@ footer{
 
   .movies-wrapper{
     grid-template-columns: 1fr 1fr;
+  }
+
+  .genre-wrapper{
+    justify-content: flex-start;
   }
 }
 
