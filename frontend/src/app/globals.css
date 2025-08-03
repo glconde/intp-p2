@@ -905,6 +905,7 @@ footer{
 
   .movie-description{
     font-size: var(--small);
+    display:none;
   }
 
   .movies-wrapper{
