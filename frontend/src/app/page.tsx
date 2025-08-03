@@ -78,11 +78,11 @@ export default function HomePage() {
       <div className="genre-wrapper">
         <Link href="#action">Action</Link>
         <Link href="#romance">Romance</Link>
-        <Link href="#comedy">Comedy</Link>
-        <Link href="#drama">Drama</Link>
-        <Link href="#thriller">Thriller</Link>
+        <Link href="#comedy">Comedies</Link>
+        <Link href="#drama">Dramas</Link>
+        <Link href="#thriller">Thrillers</Link>
         <Link href="#oldies">Oldies</Link>
-        <Link href="#horror">Action</Link>
+        <Link href="#horror">Horrors</Link>
       </div>
       <SectionTitle title="The Latest" />
       <section className="movies-wrapper">
