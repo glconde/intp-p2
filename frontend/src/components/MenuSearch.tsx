@@ -23,8 +23,11 @@ const MenuSearch = () => {
 
     const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
         if(e.target.value.length >= 2 && e.target.value != ''){
-        const results = movies && movies.filter((item:IMovie) => item.title.toLowerCase().includes(e.target.value.toLowerCase()));
-        setSearchresults(results);
+        const results = movies?.filter((item:IMovie) => item.title.toLowerCase().includes(e.target.value.toLowerCase()));
+        const genres = movies?.filter((item:IMovie) => item.genre.toLowerCase().includes(e.target.value.toLowerCase()));
+        const year = movies?.filter((item:IMovie) => item.releaseYear === Number(e.target.value));
+        const marray = [...results,...genres,...year];
+        setSearchresults(marray);
         }else{
             setSearchresults(null);
         }
@@ -45,7 +48,7 @@ const MenuSearch = () => {
         
         {search && <div className="tint">   
             <div className="search-wrapper">
-                <input type="search" onChange={handleSearch} placeholder="Search for movies" className="search"/><button onClick={handleClose}><X/></button>
+                <input type="search" onChange={handleSearch} placeholder="Search movies by title, genre or year" className="search"/><button onClick={handleClose}><X/></button>
             </div>
             <div className="search-results">{searchresults && searchresults.map((r:IMovie,i:number) => {
             return <MovieSearch key={i} movie={r}/>

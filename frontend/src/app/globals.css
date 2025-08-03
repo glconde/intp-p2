@@ -58,6 +58,10 @@ header{
   font-weight: 600;
 }
 
+.menu-logo span{
+  cursor:pointer;
+}
+
 .menu-links{
   display:flex;
   gap:15px;
@@ -109,12 +113,53 @@ button img{
   height:20px;
 }
 
+.filter-wrapper{
+  position:sticky;
+  top:80px;
+  z-index:10;
+  display:flex;
+  align-items: center;
+  gap:5px;
+  max-width:300px
+}
+
+.filter-wrapper button{
+  background-color:rgba(10,10,10,0.4);
+  backdrop-filter: blur(20px);
+  padding:15px;
+  margin:0;
+}
+
+
+.filters{
+  position:absolute;
+  top:105%;
+  background-color:rgba(10,10,10,0.6);
+  backdrop-filter: blur(20px);
+}
+
+.filter{
+  padding-block:3px;
+  padding-inline:10px;
+  cursor:pointer;
+  color:#bababa;
+}
+
+.filter:hover{
+  color:#ffffff;
+}
+
 .search-wrapper{
   position:relative;
   padding:20px;
   display:flex;
   justify-content: center;
   gap:10px;
+}
+
+.search-wrapper button{
+padding-inline:10px;
+
 }
 
 .search-results{
@@ -137,9 +182,27 @@ button img{
   margin-left:10px;
 }
 
+.filter-button{
+  background-color: transparent;
+  padding:5px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border:none;
+  outline:none;
+  transition: all 0.2s ease-in-out;
+  margin-left:10px;
+  opacity:1.0;
+  border-radius: 50px;;
+}
+
 .search-button:hover{
   background-color: transparent;
   transform: scale(1.2);
+}
+
+.filter-button:hover{
+  opacity:0.6;
 }
 
 .search-result{
@@ -189,20 +252,30 @@ button img{
   padding:50px;
 }
 
+.genre-wrapper{
+  display: flex;
+  justify-content: center;
+  gap:15px;
+  position:sticky;
+  top:74px;
+  padding:10px;
+   background-color: #000000;
+   z-index:4;
+}
+
 .section-title{
   font-size:1.2rem;
   font-weight: 600;
   color:#ffffff;
-  background-color: #000000;
-  position:sticky;
-  top:70px;
+ 
+  
   padding-block:30px;
   padding-inline:10px;
   display:flex;
   max-width:1300px;
   margin:auto;
   gap:10px;
-  z-index:4;
+  
   line-height: var(--medium);
 }
 
