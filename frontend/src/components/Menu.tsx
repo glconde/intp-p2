@@ -33,7 +33,6 @@ const Menu = () => {
             </div>
             
             <div className="menu-links">
-                <PageLink path="/" title="Home"/>
                 {(user && !loading) && <><PageLink path="/dashboard" title="Dashboard"/> <Link onClick={handleLogout} href="#">Logout</Link></>}
                 {(!user && !loading) && <PageLink path="/login" title="Login"/>}
             </div>
