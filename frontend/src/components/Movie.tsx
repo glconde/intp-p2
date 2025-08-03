@@ -21,6 +21,7 @@ interface IMovieData {
   BoxOffice: string;
   Plot: string;
   Awards: string;
+  Rated:string;
   Ratings: [];
 }
 
@@ -135,8 +136,8 @@ export const Modal = ({data, openModal, modal}:IModal) => {
               src={data.posterUrl}
               alt={data.title}
             /></picture></div>
-            <p>{data.releaseYear} • {data.genre} • {moviedata?.Runtime}</p>
-            { !moviedata ? <PropagateLoader color="yellow"/>: 
+            <p>{data.releaseYear}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;{data.genre}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<span className="rated">{moviedata?.Rated}</span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;{moviedata?.Runtime}</p>
+            { !moviedata ? <PropagateLoader color="yellow"/> : 
             <>
             <div className="modal-content-section2">
               <div className="mcs">
@@ -148,7 +149,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
               </div>
               <div className="mcs">
                 <h1><Award size={80}/></h1>
-                  <div>{!moviedata.Ratings ? <p>No ratings available</p> :  <div className="center"><div>{moviedata.Awards}</div></div>
+                  <div>{(!moviedata.Ratings || moviedata.Ratings.length == 0) ? <p>No ratings available</p> :  <div className="center"><div>{moviedata.Awards}</div></div>
                       }
                   </div>
               </div>
