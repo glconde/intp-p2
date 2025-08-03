@@ -77,7 +77,7 @@ const Page = () => {
         <section className="dashboard-section2"><div className="toggle-div" onClick={()=>setVisible(!isVisible)}>View Movies {!isVisible ? <ChevronDown size={20}/> :<ChevronUp size={20}/> }</div></section>
         { isVisible &&
         <>
-        <div className="dashboard-search"><input type="search" placeholder="Search movies" onChange={handleSearch}/></div>
+        <div className="dashboard-search"><input type="search" placeholder="Search movies by title" onChange={handleSearch}/></div>
         <section className="dashboard-section2">
             {!movies ? <div className="loader-section"><PropagateLoader color="yellow"/></div> : 
             <table>

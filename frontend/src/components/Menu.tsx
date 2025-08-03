@@ -1,11 +1,12 @@
 'use client'
 import Link from "next/link";
-import { Clapperboard } from "lucide-react"
 import { useAuth } from "@/services/AuthContext";
 import { signOutUser } from "@/lib/firebase/auth";
 import MenuSearch from "./MenuSearch";
 import { useRouter, usePathname } from "next/navigation";
 import { IPageLink } from "@/services/types";
+
+
 const Menu = () => {
     const router = useRouter()
     const { user, loading } = useAuth()
@@ -23,9 +24,12 @@ const Menu = () => {
     return(
         <nav className="menu-bar">
             <div className="menu-logo">
-                <Clapperboard size={20}/>
+                <span onClick={()=>router.push('/')}>
+              
                 MovieBank
+                </span>
                 <MenuSearch />
+              
             </div>
             
             <div className="menu-links">
@@ -37,7 +41,7 @@ const Menu = () => {
     )
 }
 
-const PageLink = ({path,title}:IPageLink) => {
+export const PageLink = ({path,title}:IPageLink) => {
     const pn = usePathname()
     return(
         <Link href={path} className={`${pn === path ? "active": ""}`}>{title}</Link>
