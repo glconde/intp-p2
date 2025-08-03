@@ -22,9 +22,9 @@ const Filter = ({setFiltered, filtered}:IFiltered) => {
     return(
         <div className="filter-wrapper">
         <button type="button" className="filter-button" onClick={()=>setFilter(!filter)}><ListFilterPlus/>Filters</button>
-        {value && <>{value} <button className="filter-button" onClick={()=>{setFiltered(null); setValue(null);}}><X/></button></> }
+        {value && <>{value} <button className="filter-button" onClick={()=>{setFiltered(null); setValue(null); setFilter(!filter);}}><X/></button></> }
         { filter && <div className="filters">
-            {filters.map((f,i)=>(<div key={i} className="filter" onClick={()=>handleFilter(f)}>{f}</div>))}
+            {filters.map((f,i)=>(<div key={i} className={`filter ${f === value && `active-filter`}`} onClick={()=>handleFilter(f)}>{f}</div>))}
             </div>}
         </div>
     )

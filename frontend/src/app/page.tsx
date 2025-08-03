@@ -72,7 +72,7 @@ export default function HomePage() {
         </div>
       )}
 
-      { filtered ? <><section className="movies-wrapper"> {filtered.map((movie, i) => <Movie key={i} movie={movie} />)} </section></> :
+      { filtered ? <><div className="subtitle">{filtered?.length} movies found</div><section className="movies-wrapper"> {filtered.map((movie, i) => <Movie key={i} movie={movie} />)} </section></> :
       <>
       
       <div className="genre-wrapper">
