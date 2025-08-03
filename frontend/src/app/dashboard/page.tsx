@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect, ChangeEvent } from 'react'
 import { Plus, Trash, SquarePen, ChevronDown, ChevronUp } from 'lucide-react'
-import { PulseLoader } from 'react-spinners'
+import { PropagateLoader } from 'react-spinners'
 import { useRouter } from 'next/navigation'
 import { apiURL } from '@/services/services'
 import { IMovie } from '@/services/types'
@@ -79,7 +79,7 @@ const Page = () => {
         <>
         <div className="dashboard-search"><input type="search" placeholder="Search movies" onChange={handleSearch}/></div>
         <section className="dashboard-section2">
-            {!movies ? <PulseLoader color="yellow"/> : 
+            {!movies ? <div className="loader-section"><PropagateLoader color="yellow"/></div> : 
             <table>
                 <thead>
                 <tr>
