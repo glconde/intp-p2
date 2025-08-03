@@ -16,12 +16,12 @@ const Page = () => {
     const [isVisible, setVisible] = useState(true)
     const [form, setForm] = useState<boolean>(false)
     const [id, setId] = useState<number | null>(null)
-    const { user } = useAuth()
+    const { user, loading } = useAuth()
     const router = useRouter()
     useEffect(()=>{
-        if(!user){router.replace('/');}
+        if(!user && !loading){router.replace('/');}
         getMovies()
-    },[user, router])
+    },[user, router, loading])
 
     
 

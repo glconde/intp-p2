@@ -120,6 +120,8 @@ button img{
 .search-results{
   max-height:400px;
   overflow:auto;
+  max-width:800px;
+  margin:auto;
   box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.4);
 }
 
@@ -132,6 +134,7 @@ button img{
   border:none;
   outline:none;
   transition: all 0.2s ease-in-out;
+  margin-left:10px;
 }
 
 .search-button:hover{
@@ -145,7 +148,15 @@ button img{
   background-color:#202020;
   border-bottom: solid 1px #404040;
   padding:10px;
-  cursor:pointer
+  cursor:pointer;
+}
+
+.search-result:nth-child(1){
+  border-radius:10px 10px 0px 0px;
+}
+
+.search-result:nth-last-child(1){
+  border-radius:0px 0px 10px 10px;
 }
 
 .search-result:hover{
@@ -585,6 +596,7 @@ form textarea{
   padding-inline:10px;
   outline:none;
   color:#ffffff;
+  width:250px;
   font-family:var(--font);
   font-size: var(--normal);
 }
@@ -637,6 +649,10 @@ td{
 
 thead td{
   font-weight: 700;
+}
+
+td button{
+  padding:5px;
 }
 
 thead{

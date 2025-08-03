@@ -8,7 +8,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { IPageLink } from "@/services/types";
 const Menu = () => {
     const router = useRouter()
-    const { user } = useAuth()
+    const { user, loading } = useAuth()
 
     const handleLogout = async () => {
         try{
@@ -30,8 +30,8 @@ const Menu = () => {
             
             <div className="menu-links">
                 <PageLink path="/" title="Home"/>
-                {user && <><PageLink path="/dashboard" title="Dashboard"/> <Link onClick={handleLogout} href="#">Logout</Link></>}
-                {!user && <PageLink path="/login" title="Login"/>}
+                {(user && !loading) && <><PageLink path="/dashboard" title="Dashboard"/> <Link onClick={handleLogout} href="#">Logout</Link></>}
+                {(!user && !loading) && <PageLink path="/login" title="Login"/>}
             </div>
         </nav>
     )
