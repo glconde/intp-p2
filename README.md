@@ -407,3 +407,13 @@ NEXT_PUBLIC_API_URL=https://<your-cloudfront-distribution>.cloudfront.net
 ```
 
 > **Note:** The `NEXT_PUBLIC_` prefix is required in Next.js/React so that variables are exposed to the browser.
+
+### Network Diagram
+
+![Network Diagram](/docs/network.png)
+
+This diagram illustrates the network architecture, including Virtual Private Cloud (VPC), subnets, gateways, EC2, RDS, and image storage components
+
+---
+#### Group 1 - Emerging Trends - INTP-302-A - Spring 2025
+#####  Southern Alberta Instritute of Technology (SAIT)
