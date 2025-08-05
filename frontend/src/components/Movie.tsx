@@ -136,7 +136,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
               src={data.posterUrl}
               alt={data.title}
             /></picture></div>
-            <p>{data.releaseYear}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;{data.genre}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<span className="rated">{moviedata?.Rated}</span>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;{moviedata?.Runtime}</p>
+            <p>{data.releaseYear}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;{data.genre}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;<span className="rated">{moviedata?.Rated}</span></p>
             { !moviedata ? <PropagateLoader color="yellow"/> : 
             <>
             <div className="modal-content-section2">
@@ -161,6 +161,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
                 <tr><td>Actors</td><td>{moviedata.Actors}</td></tr>
                 <tr><td>Writers</td><td>{ moviedata.Writer}</td></tr>
                 <tr><td>Languages</td><td>{moviedata.Language}</td></tr>
+                <tr><td>Runtime</td><td>{moviedata.Runtime}</td></tr>
                 <tr><td>Box Office</td><td>{moviedata.BoxOffice}</td></tr>
                 <tr><td>Plot</td><td>{moviedata.Plot}</td></tr>
 
