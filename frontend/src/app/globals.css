@@ -538,6 +538,7 @@ padding-inline:10px;
 
 .modal-content td{
   text-align: left;
+  vertical-align: top;
 }
 
 .modal-content tr td:nth-child(1){
