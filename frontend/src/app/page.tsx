@@ -1,5 +1,5 @@
 "use client";
-
+import { GoogleGenAI } from "@google/genai";
 import { useEffect, useState } from "react";
 import { Movie} from "@/components/Movie";
 import SectionTitle from "@/components/SectionTitle";
@@ -8,12 +8,14 @@ import { IMovie } from "@/services/types";
 import { PulseLoader } from "react-spinners";
 import Link from "next/link";
 import Filter from "@/components/Filter";
+//import { Genai } from "@/components/Genai";
 
 export default function HomePage() {
   const [movies, setMovies] = useState<IMovie[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [filtered, setFiltered] = useState<IMovie[] | null>(null);
-
+  const [airesponse, setAiresponse] = useState<unknown | null>("")
+  const ai = new GoogleGenAI({apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY});
   useEffect(() => {
     //allMovies.then((m) => setMovies(m))
     allMovies.then((m) => {
@@ -25,6 +27,8 @@ export default function HomePage() {
     });
     if(movies) {scroller(); }
     if(filtered){ scroller();}
+
+  
   }, [filtered, movies]);
 
   const scroller = () => {
@@ -33,6 +37,15 @@ export default function HomePage() {
       fader();
     });
   };
+
+  const gai = async () => {
+    const response = await ai.models.generateContent({
+    model: "gemini-2.5-flash",
+    contents: "Explain how AI works in a few words",
+  });
+    setAiresponse(response.text)
+
+  }
 
   // Get Romance Movies
   const romance = movies?.filter((item: IMovie) => item.genre.toLowerCase().includes("romance"));
@@ -84,6 +97,7 @@ export default function HomePage() {
         <Link href="#oldies">Oldies</Link>
         <Link href="#horror">Horrors</Link>
       </div>
+
       <SectionTitle title="The Latest" />
       <section className="movies-wrapper">
         {latest && latest.map((movie, i) => <Movie key={i} movie={movie} />)}
