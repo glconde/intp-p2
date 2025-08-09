@@ -448,6 +448,8 @@ padding-inline:10px;
   top:4vh;
   left:50px;
   right:50px;
+  max-width:1000px;
+  margin-inline:auto;
   height:96vh;
   border-radius: 20px;
   box-shadow: 2px -2px 20px 0px rgba(0,0,0,0.3);

@@ -149,7 +149,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
     setSearch(true)
     const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: `where can I stream the movie ${data.title} (${data.releaseYear})`,
+    contents: `where can I stream the movie ${data.title} (${data.releaseYear}) and provide url for the streaming platform`,
     config
   });
   const txt = response?.text;
@@ -232,7 +232,7 @@ export const Modal = ({data, openModal, modal}:IModal) => {
                   </div>
               </div>
             </div>
-            <div className="ai-wrapper"><h3>Popcorn Ai</h3><div><button onClick={gai}><BrainCircuit/>{search ? 'Getting additional data...' : 'Use popcorn ai to get streaming options'}</button></div>{!airesponse && search ? <PropagateLoader color="rgba(255,255,255,0.1)"/> : <div style={{textAlign:'left'}} dangerouslySetInnerHTML={{ __html: airesponse?.toString() ?? '' }} />}</div>
+            <div className="ai-wrapper"><h3>Popcorn Ai</h3><div><button onClick={gai}><BrainCircuit/>{search ? 'Getting streaming options...' : 'Use popcorn ai to get streaming options'}</button></div>{!airesponse && search ? <PropagateLoader color="rgba(255,255,255,0.1)"/> : <div style={{textAlign:'left'}} dangerouslySetInnerHTML={{ __html: airesponse?.toString() ?? '' }} />}</div>
             
             <table>
               <tbody>
