@@ -415,5 +415,115 @@ NEXT_PUBLIC_API_URL=https://<your-cloudfront-distribution>.cloudfront.net
 This diagram illustrates the network architecture, including Virtual Private Cloud (VPC), subnets, gateways, EC2, RDS, and image storage components
 
 ---
+
+## FAQ – Infrastructure & AWS Services
+
+### Why did you set up a VPC for this project?
+The VPC isolates our backend (Elastic Beanstalk EC2 instances) and database (RDS) from the public internet. This provides network-level control over subnets, routing, and security groups. Only Elastic Beanstalk can reach RDS directly, and external clients never touch the database.
+
+### What role does the Internet Gateway and NAT Gateway play in your architecture?
+The Internet Gateway allows inbound/outbound traffic for resources inside our VPC, such as Beanstalk EC2 instances.  
+The NAT Gateway allows private resources like RDS to initiate outbound requests (e.g., OS or patch updates) without being directly exposed.  
+Note: Amplify and CloudFront are AWS-managed services outside the VPC, so they do not depend on our IGW/NAT.
+
+### How did you configure security to prevent unauthorized access?
+- RDS is in a private subnet with no public exposure.  
+- CORS is configured so only our Amplify frontend can call the backend API.  
+- Secrets such as DB credentials, API keys, and JWT secrets are stored in AWS Systems Manager Parameter Store and Amplify environment variables, not hardcoded.
+
+---
+
+## FAQ – Service Choices
+
+### Why Elastic Beanstalk instead of EC2?
+Elastic Beanstalk abstracts away provisioning, scaling, and load balancing. It still runs on EC2, but Beanstalk manages patching, auto-scaling, and deployments. This saved us from manual configuration.
+
+### Why use CloudFront in front of Amplify? Isn’t Amplify already HTTPS-enabled?
+CloudFront wasn’t just for caching. Our Beanstalk backend served only HTTP, so CloudFront terminated HTTPS and ensured secure traffic between frontend and backend.
+
+### Why RDS MySQL instead of DynamoDB or Aurora?
+We needed a relational database for structured queries and entity relationships (movies, users). MySQL fit the free tier, worked well with Spring Boot, and was simpler than DynamoDB or Aurora for this project.
+
+---
+
+## FAQ – CI/CD & Deployment
+
+### How did CI/CD improve your workflow?
+Separate pipelines for frontend and backend allowed independent release cycles. GitHub Actions automated builds, tests, and deployments, ensuring production parity and reducing manual effort.
+
+### How is Amplify connected to GitHub?
+Amplify is linked to our GitHub repo and triggers builds when code is pushed to a specific branch. The `amplify.yml` defines install, build, and artifact steps.
+
+### How is the backend deployed with GitHub Actions?
+On pushes to `staging-backend`, GitHub Actions checks out the repo, sets up Java 17, builds with Maven, and deploys the JAR to Elastic Beanstalk using the AWS CLI.
+
+---
+
+## FAQ – Integrations & Future Work
+
+### Why not use S3 for movie posters?
+Currently, poster URLs are fetched from OMDb and stored as links. In production, S3 would ensure reliability and prevent broken links.
+
+### Why use Firebase when AWS has Cognito?
+Firebase Authentication was quick to implement and matched our team’s skills and timeline. AWS Cognito would be a strong alternative in a production environment.
+
+### Did you enable Multi-AZ or backups for RDS?
+Multi-AZ was disabled to stay within free tier. In production, we would enable Multi-AZ and automated backups for higher availability.
+## FAQ – Infrastructure & AWS Services
+
+### Why did you set up a VPC for this project?
+The VPC isolates our backend (Elastic Beanstalk EC2 instances) and database (RDS) from the public internet. This provides network-level control over subnets, routing, and security groups. Only Elastic Beanstalk can reach RDS directly, and external clients never touch the database.
+
+### What role does the Internet Gateway and NAT Gateway play in your architecture?
+The Internet Gateway allows inbound/outbound traffic for resources inside our VPC, such as Beanstalk EC2 instances.  
+The NAT Gateway allows private resources like RDS to initiate outbound requests (e.g., OS or patch updates) without being directly exposed.  
+Note: Amplify and CloudFront are AWS-managed services outside the VPC, so they do not depend on our IGW/NAT.
+
+### How did you configure security to prevent unauthorized access?
+- RDS is in a private subnet with no public exposure.  
+- CORS is configured so only our Amplify frontend can call the backend API.  
+- Secrets such as DB credentials, API keys, and JWT secrets are stored in AWS Systems Manager Parameter Store and Amplify environment variables, not hardcoded.
+
+---
+
+## FAQ – Service Choices
+
+### Why Elastic Beanstalk instead of EC2?
+Elastic Beanstalk abstracts away provisioning, scaling, and load balancing. It still runs on EC2, but Beanstalk manages patching, auto-scaling, and deployments. This saved us from manual configuration.
+
+### Why use CloudFront in front of Amplify? Isn’t Amplify already HTTPS-enabled?
+CloudFront wasn’t just for caching. Our Beanstalk backend served only HTTP, so CloudFront terminated HTTPS and ensured secure traffic between frontend and backend.
+
+### Why RDS MySQL instead of DynamoDB or Aurora?
+We needed a relational database for structured queries and entity relationships (movies, users). MySQL fit the free tier, worked well with Spring Boot, and was simpler than DynamoDB or Aurora for this project.
+
+---
+
+## FAQ – CI/CD & Deployment
+
+### How did CI/CD improve your workflow?
+Separate pipelines for frontend and backend allowed independent release cycles. GitHub Actions automated builds, tests, and deployments, ensuring production parity and reducing manual effort.
+
+### How is Amplify connected to GitHub?
+Amplify is linked to our GitHub repo and triggers builds when code is pushed to a specific branch. The `amplify.yml` defines install, build, and artifact steps.
+
+### How is the backend deployed with GitHub Actions?
+On pushes to `staging-backend`, GitHub Actions checks out the repo, sets up Java 17, builds with Maven, and deploys the JAR to Elastic Beanstalk using the AWS CLI.
+
+---
+
+## FAQ – Integrations & Future Work
+
+### Why not use S3 for movie posters?
+Currently, poster URLs are fetched from OMDb and stored as links. In production, S3 would ensure reliability and prevent broken links.
+
+### Why use Firebase when AWS has Cognito?
+Firebase Authentication was quick to implement and matched our team’s skills and timeline. AWS Cognito would be a strong alternative in a production environment.
+
+### Did you enable Multi-AZ or backups for RDS?
+Multi-AZ was disabled to stay within free tier. In production, we would enable Multi-AZ and automated backups for higher availability.
+
+
+---
 #### Group 1 - Emerging Trends - INTP-302-A - Spring 2025
 #####  Southern Alberta Instritute of Technology (SAIT)
