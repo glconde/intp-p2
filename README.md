@@ -415,6 +415,19 @@ NEXT_PUBLIC_API_URL=https://<your-cloudfront-distribution>.cloudfront.net
 This diagram illustrates the network architecture, including Virtual Private Cloud (VPC), subnets, gateways, EC2, RDS, and image storage components
 
 ---
+## AWS Console Views
+
+### Amplify
+![Amplify](/docs/amplify.png)
+### Elastic Beanstalk
+![Elastic Beanstalk](/docs/eb.png)
+### RDS
+![RDS](/docs/rds.png)
+### Cloudfront
+![Cloudfront](/docs/cloudfront.png)
+### Billing and Cost Management
+![Cost](/docs/cost.png)
+---
 
 ## FAQ – Infrastructure & AWS Services
 
